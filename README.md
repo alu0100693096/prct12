@@ -1,29 +1,37 @@
-# Prct09
+﻿# Prct09
 
-TODO: Write a gem description
+Clases que permiten gestionar matrices densas o dispersas de forma diferente
+para mejorar el uso de la memoria.
 
-## Installation
+La clase Matriz será la interfaz de las clases MatrizDensa y MatrizDispersa,
+las cuales son subclases de la clase Matriz e implementan de forma adecuada
+las funcionalidades heredadas.
 
-Add this line to your application's Gemfile:
+## Instalación
+
+Añadir la siguiente línea al Gemfile de tu aplicación:
 
     gem 'prct09'
 
-And then execute:
+Y luego ejecutar:
 
     $ bundle
 
-Or install it yourself as:
+O instálalo manualmente mediante:
 
     $ gem install prct09
 
-## Usage
+## Uso
 
-TODO: Write usage instructions here
+Para utilizar esta librería en tu aplicación Ruby, debes incluir el fichero
+prct09:
 
-## Contributing
+    require 'prct09'
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Contribuir
+
+1. Haz un fork
+2. Crea tu rama de características (`git checkout -b my-new-feature`)
+3. Haz un commit con tus cambios (`git commit -am 'Add some feature'`)
+4. Haz un push de los cambios (`git push origin my-new-feature`)
+5. Crea una Pull Request

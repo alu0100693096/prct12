@@ -6,11 +6,11 @@ require 'prct09/version'
 Gem::Specification.new do |spec|
   spec.name          = "prct09"
   spec.version       = Prct09::VERSION
-  spec.authors       = ["Laura Fariña"]
-  spec.email         = ["alu0100693096@ull.edu.es"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.authors       = ["Laura Fariña", "Sergio Afonso"]
+  spec.email         = ["alu0100693096@ull.edu.es", "alu0100700459@ull.edu.es"]
+  spec.description   = %q{Clases que permiten gestionar matrices densas o dispersas de forma diferente para mejorar el uso de la memoria.}
+  spec.summary       = %q{Conjunto de clases para la gestión de matrices dispersas o densas.}
+  spec.homepage      = "https://github.com/alu0100693096/prct09"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
