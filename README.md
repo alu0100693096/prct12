@@ -1,4 +1,4 @@
-﻿# Prct09
+# Prct09
 
 Clases que permiten gestionar matrices densas o dispersas de forma diferente
 para mejorar el uso de la memoria.
@@ -27,6 +27,16 @@ Para utilizar esta librería en tu aplicación Ruby, debes incluir el fichero
 prct09:
 
     require 'prct09'
+
+Para colaborar en la escritura del código se deben instalar las dependencias
+de la librería. Esto se hace automáticamente ejecutando:
+
+    bundle
+
+En caso de no tener bundle instalado o que la versión sea más antigua, antes
+hay que ejecutar:
+
+    gem install bundle
 
 ## Contribuir
 
