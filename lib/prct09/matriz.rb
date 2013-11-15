@@ -7,8 +7,8 @@ class Matriz
   # Constructor. No crea ningún contenedor
   def initialize(filas, columnas)
     validate_sizes(filas, columnas)
-    filas = filas
-    columnas = columnas
+    @filas = filas
+    @columnas = columnas
   end
 
   # Método para poder utilizar Enumerable
@@ -115,7 +115,6 @@ class Matriz
     @columnas = value
   end
 
- private
   # Se asegura que los valores pasados están dentro del rango [0, Infinito)
   # y que son números enteros. En caso contrario lanza una excepción.
   def validate_sizes(*values)
