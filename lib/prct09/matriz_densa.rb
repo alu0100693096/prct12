@@ -12,7 +12,7 @@ class MatrizDensa < Matriz
     validate_sizes(value)
 
     if value > filas
-      (value - filas).times { @container << Array.new(columns, zero) }
+      (value - filas).times { @container << Array.new(columnas, zero) }
     elsif value < filas
       @container.slice!(-1, filas - value)
     end
