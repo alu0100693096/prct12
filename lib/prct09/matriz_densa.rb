@@ -3,9 +3,9 @@ require "prct09/matriz"
 module Prct09
 
 class MatrizDensa < Matriz
-  def initialize(filas, columnas)
-    super(filas, columnas)
-    @container = Array.new(filas){ |f| f = Array.new(columnas, zero) }
+  def initialize(fils, cols)
+    super(fils, cols)
+    @container = Array.new(fils){ Array.new(cols, zero) }
   end
 
   def filas=(value)

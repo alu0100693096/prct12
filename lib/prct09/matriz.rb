@@ -12,7 +12,7 @@ class Matriz
   end
 
   # Método para poder utilizar Enumerable
-  def each()
+  def each
     for i in 0...self.filas
       for j in 0...self.columnas
         yield self[i, j]
@@ -23,7 +23,7 @@ class Matriz
   # Suma de matrices
   def +(other)
     if((self.filas == other.filas) && (self.columnas == other.columnas))
-      sum = Matriz.new(self.filas, self.columnas)
+      sum = self.class.new(self.filas, self.columnas)
       i = 0
       while i < self.filas do
         j = 0
@@ -42,7 +42,7 @@ class Matriz
   # Resta de matrices
   def -(other)
     if((self.filas == other.filas) && (self.columnas == other.columnas))
-      sum = Matriz.new(self.filas, self.columnas) # CAMBIARLO: Matriz es abstracta
+      sum = self.class.new(self.filas, self.columnas)
       i = 0
       while i < self.filas do
         j = 0
@@ -67,8 +67,8 @@ class Matriz
       return
     end
 
-    # Crea una matrix con tantas filas como la matriz 1 y tantas columnas como la matriz 2.
-    result = Matriz.new(rows, other.columns) # CAMBIARLO: Matriz es abstracta
+    # Crea una matriz con tantas filas como la matriz 1 y tantas columnas como la matriz 2.
+    result = self.class.new(filas, other.columnas)
 
     # Algoritmo de la multiplicación de matrices.
     for i in 0...result.filas
@@ -97,11 +97,18 @@ class Matriz
         end
       end
     end
-    true
+    return true
   end
 
-  def !=(other)
-    return !(self == other)
+  def to_s
+    s = ""
+    for i in 0...filas do
+      for j in 0...columnas do
+        s << "#{self[i, j]}"
+      end
+      s << "\n"
+    end
+    s
   end
 
  protected
