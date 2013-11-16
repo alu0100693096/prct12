@@ -38,6 +38,18 @@ hay que ejecutar:
 
     gem install bundle
 
+Para utilizar las clases MatrizDensa y MatrizDispersa para los tipos de datos que necesites, debes hacer tu propia
+clase y que implemente el método `zero` que devuelva el valor 0 de ese tipo de dato. Ejemplo:
+
+```ruby
+require "prct09"
+class MatrizDensaEnteros < Prct09::MatrizDensa
+  def zero
+    0
+  end
+end
+```
+
 ## Contribuir
 
 1. Haz un fork
