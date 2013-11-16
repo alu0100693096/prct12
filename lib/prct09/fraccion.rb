@@ -27,27 +27,44 @@ class Fraccion
 
     # OPERACIONES DE COMPARACIÓN
     def <=>(other)
+        if !(other.is_a? Fraccion)
+            other = Fraccion.new(other, 1)
+        end
         d = @denom * other.denom
         (d/@denom)*@num <=> (d/other.denom)*other.num
     end
 
     # OPERACIONES ARITMÉTICAS
     def +(other)
+        if !(other.is_a? Fraccion)
+            other = Fraccion.new(other, 1)
+        end
         d = @denom * other.denom
         Fraccion.new((d/@denom)*@num + (d/other.denom)*other.num, d)
     end
 
     def -(other)
+        if !(other.is_a? Fraccion)
+            other = Fraccion.new(other, 1)
+        end
         d = @denom * other.denom
         Fraccion.new((d/@denom)*@num - (d/other.denom)*other.num, d)
     end
 
     def *(other)
-        Fraccion.new(@num*other.num, @denom*other.denom)
+        if !(other.is_a? Fraccion)
+            Fraccion.new(@num*other, @denom)
+        else
+            Fraccion.new(@num*other.num, @denom*other.denom)
+        end
     end
 
     def /(other)
-        Fraccion.new(@num*other.denom, @denom*other.num)
+        if !(other.is_a? Fraccion)
+            Fraccion.new(@num, @denom*other)
+        else
+            Fraccion.new(@num*other.denom, @denom*other.num)
+        end
     end
 
     def %(other)
@@ -56,6 +73,12 @@ class Fraccion
 
     def -@
         Fraccion.new(-@num, @denom)
+    end
+    
+    # Permite operaciones conmutativas (+ y *) con un entero.
+    # Los resultados serán incorrectos si se utiliza con una división o una resta.
+    def coerce(other)
+        [self, other]
     end
 
     # OTRAS OPERACIONES
