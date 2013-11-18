@@ -24,7 +24,7 @@ class MatrizDispersa < Matriz
     validate_sizes(value)
 
     if value < filas
-      @container.each_key |k| do
+      @container.each_key do |k|
         if k.f >= value
           @container.delete k
         end
@@ -38,7 +38,7 @@ class MatrizDispersa < Matriz
     validate_sizes(value)
 
     if value < columnas
-      @container.each_key |k| do
+      @container.each_key do |k|
         if k.c >= value
           @container.delete k
         end
