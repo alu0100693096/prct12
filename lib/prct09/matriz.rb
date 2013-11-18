@@ -126,7 +126,7 @@ class Matriz
   # y que son números enteros. En caso contrario lanza una excepción.
   def validate_sizes(*values)
     values.each do |x|
-      raise(ArgumentError, "#{x} no es un valor correcto") unless(x.integer? and x >= 0)
+      raise(ArgumentError, "#{x} no es un valor correcto") unless(x.is_a?Integer and x >= 0)
     end
   end
 
