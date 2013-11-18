@@ -3,22 +3,57 @@ require "prct09/matriz"
 module Prct09
 
 class MatrizDispersa < Matriz
+  private
+    class Posicion
+      attr_accessor :f, :c
+      def initialize(fil, col)
+        @f, @c = fil, col
+      end
+      def eql?(other)
+        @f == other.f and @c == other.c
+      end
+    end
+
+  public
   def initialize(filas, columnas)
-    # Crear contenedor y llamar a super
+    super(fils, cols)
+    @container = Hash.new(zero)
   end
 
   def filas=(value)
-    # Redimensionar contenedor y cambiar valores de filas
+    validate_sizes(value)
+
+    if value < filas
+      @container.each_key |k| do
+        if k.f >= value
+          @container.delete k
+        end
+      end
+    end
+
+    filas = value
   end
 
   def columnas=(value)
-    # Redimensionar contenedor y cambiar valores de columnas
+    validate_sizes(value)
+
+    if value < columnas
+      @container.each_key |k| do
+        if k.c >= value
+          @container.delete k
+        end
+      end
+    end
+
+    columnas = value
   end
 
   def [](fila, columna)
+    @container[Posicion.new(fila, columna)]
   end
 
   def []=(fila, columna, valor)
+    @container[Posicion.new(fila, columna)] = valor
   end
 end
 
