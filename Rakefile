@@ -11,5 +11,5 @@ end
 
 desc "Ejecutamos las pruebas unitarias"
 task :test do
-  sh "ruby test/tc_matrices.rb"
+  sh "ruby -I./lib test/tc_matrices.rb"
 end
