@@ -53,7 +53,9 @@ class MatrizDispersa < Matriz
   end
 
   def []=(fila, columna, valor)
-    @container[Posicion.new(fila, columna)] = valor
+  	if valor != zero
+      @container[Posicion.new(fila, columna)] = valor
+    end
   end
 end
 
