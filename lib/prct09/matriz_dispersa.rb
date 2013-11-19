@@ -16,7 +16,7 @@ class MatrizDispersa < Matriz
 
   public
   def initialize(filas, columnas)
-    super(fils, cols)
+    super(filas, columnas)
     @container = Hash.new(zero)
   end
 
