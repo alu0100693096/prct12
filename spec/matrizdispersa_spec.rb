@@ -2,7 +2,7 @@ require "prct09"
 
 describe Prct09::MatrizDispersa do
   before :all do   
-    # definir las clases zero
+    # Definir las clases concretas
     class MatrizDispersaFixnum < Prct09::MatrizDispersa
       def zero
         0
@@ -15,7 +15,7 @@ describe Prct09::MatrizDispersa do
       end
     end
 
-    # definir las matrices de enteros y fracciones
+    # Definir las matrices de enteros y fracciones
     @m1 = MatrizDispersaFixnum.new(2, 2)
     @m2 = MatrizDispersaFixnum.new(2, 2)
     @m3 = MatrizDispersaFixnum.new(2, 2)
@@ -137,19 +137,23 @@ describe Prct09::MatrizDispersa do
 
     it "Deben poder sumarse 2 matrices" do
       @m6[0, 0] = Prct09::Fraccion.new(2, 1)
-      @m6[1, 0] = Prct09::Fraccion.new(11, 3)
+      @m6[0, 1] = Prct09::Fraccion.new(11, 3)
+      @m6[1, 0] = Prct09::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct09::Fraccion.new(0, 1)
 
       (@m1+@m4).should eq(@m6)
     end
     it "Deben poder restarse 2 matrices" do
       @m6[0, 0] = Prct09::Fraccion.new(2, 1)
       @m6[0, 1] = Prct09::Fraccion.new(7, 3)
+      @m6[1, 0] = Prct09::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct09::Fraccion.new(0, 1)
 
       (@m1-@m4).should eq(@m6)
     end
     it "Deben poder multiplicarse 2 matrices" do
       @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-      @m6[0, 1] = Prct09::Fraccion.new(2, 3)
+      @m6[0, 1] = Prct09::Fraccion.new(4, 3)
       @m6[1, 0] = Prct09::Fraccion.new(0, 1)
       @m6[1, 1] = Prct09::Fraccion.new(0, 1)
 
