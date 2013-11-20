@@ -53,8 +53,10 @@ class MatrizDispersa < Matriz
   end
 
   def []=(fila, columna, valor)
-  	if valor != zero
+    if valor != zero
       @container[Posicion.new(fila, columna)] = valor
+    else
+      @container.delete(Posicion.new(fila, columna))
     end
   end
 end
