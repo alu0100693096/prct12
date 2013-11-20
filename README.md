@@ -1,5 +1,7 @@
 # Prct09
 
+Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100693096/prct09.png?branch=master)](https://travis-ci.org/alu0100693096/prct09)
+
 Clases que permiten gestionar matrices densas o dispersas de forma diferente
 para mejorar el uso de la memoria.
 
