@@ -78,6 +78,13 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         @m3[1, 0] = 7
         @m3[1, 1] = 3
         assert_equal(@m3, @m1)
+
+	#Mínimo
+        assert_equal(@m1.min,1)
+
+	#Máximo
+	assert_equal(@m1.max,7)
+
     end
 
     def test_fracciones
@@ -108,6 +115,12 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         @m6[1, 0] = Prct09::Fraccion.new(7, 2)
         @m6[1, 1] = Prct09::Fraccion.new(3, 2)
         assert_equal(@m6, @m4)
+
+	#Mínimo
+        assert_equal(@m4.min,Prct09::Fraccion.new(1, 2))
+
+	#Máximo
+	assert_equal(@m4.max,Prct09::Fraccion.new(7, 2))
 	end
 
     def test_combinacion

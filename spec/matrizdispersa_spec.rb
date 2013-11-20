@@ -71,6 +71,12 @@ describe Prct09::MatrizDispersa do
       
       @m1.should eq(@m3)
     end
+    it "Debe poder calcularse el máximo correctamente" do
+      (@m1.max).should eq(4)
+    end
+    it "Debe poder calcularse el mínimo correctamente" do
+      (@m1.min).should eq(4)
+    end
   end
 
   describe "Operaciones con fracciones" do
@@ -118,6 +124,12 @@ describe Prct09::MatrizDispersa do
       @m6[1, 1] = Prct09::Fraccion.new(0, 1)
       
       @m4.should eq(@m6)
+    end
+    it "Debe poder calcularse el máximo correctamente" do
+      (@m4.max).should eq(Prct09::Fraccion.new(1, 2))
+    end
+    it "Debe poder calcularse el mínimo correctamente" do
+      (@m4.min).should eq(Prct09::Fraccion.new(1, 2))
     end
   end
 

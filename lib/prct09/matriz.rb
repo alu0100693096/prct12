@@ -110,6 +110,28 @@ class Matriz
     end
     s
   end
+	
+  def max
+    maxi = -9999
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] > maxi)
+          maxi = self[i,j]
+        end
+      end
+    end
+  end
+
+  def min
+    mini = 9999
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] < mini)
+          mini = self[i,j]
+        end
+      end
+    end
+  end
 
  protected
   # Métodos para ser llamados por las subclases para modificar el nº de filas

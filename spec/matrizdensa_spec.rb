@@ -73,6 +73,12 @@ describe Prct09::MatrizDensa do
 
       @m1.should eq(@m3)
     end
+    it "Debe poder calcularse el máximo correctamente" do
+      (@m1.max).should eq(7)
+    end
+    it "Debe poder calcularse el mínimo correctamente" do
+      (@m1.min).should eq(1)
+    end
   end
 
   # FRACCIONES
@@ -131,6 +137,12 @@ describe Prct09::MatrizDensa do
       @m3[1, 1] = Prct09::Fraccion.new(3, 2)
 
       @m1.should eq(@m3)
+    end
+    it "Debe poder calcularse el máximo correctamente" do
+      (@m1.max).should eq(Prct09::Fraccion.new(7, 2))
+    end
+    it "Debe poder calcularse el mínimo correctamente" do
+      (@m1.min).should eq(Prct09::Fraccion.new(1, 2))
     end
   end
 

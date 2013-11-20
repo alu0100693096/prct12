@@ -43,6 +43,32 @@ class MatrizDensa < Matriz
   def []=(fila, columna, valor)
     @container[fila][columna] = valor
   end
+
+  #Maximo y minimo (Se definen en cada subclase porque en cada una es diferente)
+  def max
+    maxi = -9999
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] > maxi)
+          maxi = self[i,j]
+        end
+      end
+    end
+    maxi
+  end
+
+  def min
+    mini = 9999
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] < mini)
+          mini = self[i,j]
+        end
+      end
+    end
+    mini
+  end
+
 end
 
 end

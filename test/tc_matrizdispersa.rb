@@ -18,13 +18,13 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
     def setup
 	# Crear matrices
 	# --Enteras        	
-	@m1 = MatrizDensaFixnum.new(2, 2)
-        @m2 = MatrizDensaFixnum.new(2, 2)
-        @m3 = MatrizDensaFixnum.new(2, 2)
+	@m1 = MatrizDispersaFixnum.new(2, 2)
+        @m2 = MatrizDispersaFixnum.new(2, 2)
+        @m3 = MatrizDispersaFixnum.new(2, 2)
 	# --Fracciones
-	@m4 = MatrizDensaFraccion.new(2, 2)
-        @m5 = MatrizDensaFraccion.new(2, 2)
-        @m6 = MatrizDensaFraccion.new(2, 2)
+	@m4 = MatrizDispersaFraccion.new(2, 2)
+        @m5 = MatrizDispersaFraccion.new(2, 2)
+        @m6 = MatrizDispersaFraccion.new(2, 2)
 
         # Inicializar
 	# --Enteras
@@ -78,6 +78,13 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         @m3[1, 0] = 0
         @m3[1, 1] = 0
         assert_equal(@m3, @m1)
+
+	#Mínimo
+        assert_equal(@m1.min,4)
+
+	#Máximo
+	assert_equal(@m1.max,4)
+
     end
 
     def test_fracciones
@@ -108,6 +115,13 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         @m6[1, 0] = Prct09::Fraccion.new(1, 2)
         @m6[1, 1] = Prct09::Fraccion.new(0, 1)
         assert_equal(@m6, @m4)
+
+        #Mínimo
+        assert_equal(@m4.min,Prct09::Fraccion.new(1, 2))
+
+	#Máximo
+	assert_equal(@m4.max,Prct09::Fraccion.new(1, 2))
+
 	end
 
     def test_combinacion
