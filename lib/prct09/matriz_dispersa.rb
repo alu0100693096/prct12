@@ -9,6 +9,9 @@ class MatrizDispersa < Matriz
       def initialize(fil, col)
         @f, @c = fil, col
       end
+      def hash
+        @f.hash ^ @c.hash
+      end
       def eql?(other)
         @f == other.f and @c == other.c
       end

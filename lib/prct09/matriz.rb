@@ -104,7 +104,7 @@ class Matriz
     s = ""
     for i in 0...filas do
       for j in 0...columnas do
-        s << "#{self[i, j]}"
+        s << " #{self[i, j]}"
       end
       s << "\n"
     end
