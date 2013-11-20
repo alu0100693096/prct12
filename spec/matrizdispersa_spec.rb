@@ -142,10 +142,10 @@ describe Prct09::MatrizDispersa do
       (@m1+@m4).should eq(@m6)
     end
     it "Deben poder restarse 2 matrices" do
-      @m6[0, 0] = Prct09::Fraccion.new(-2, 1)
-      @m6[0, 1] = Prct09::Fraccion.new(-7, 3)
+      @m6[0, 0] = Prct09::Fraccion.new(2, 1)
+      @m6[0, 1] = Prct09::Fraccion.new(7, 3)
 
-      (@m4-@m1).should eq(@m6)
+      (@m1-@m4).should eq(@m6)
     end
     it "Deben poder multiplicarse 2 matrices" do
       @m6[0, 0] = Prct09::Fraccion.new(0, 1)

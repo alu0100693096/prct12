@@ -166,12 +166,12 @@ describe Prct09::MatrizDensa do
     end
 
     it "Deben poder restarse 2 matrices" do
-      @m3[0, 0] = Prct09::Fraccion.new(3, 2)
+      @m3[0, 0] = Prct09::Fraccion.new(-3, 2)
       @m3[0, 1] = Prct09::Fraccion.new(0, 1)
-      @m3[1, 0] = Prct09::Fraccion.new(-5, 2)
-      @m3[1, 1] = Prct09::Fraccion.new(-5, 2)
+      @m3[1, 0] = Prct09::Fraccion.new(5, 2)
+      @m3[1, 1] = Prct09::Fraccion.new(5, 2)
 
-      (@m2-@m1).should eq(@m3)
+      (@m1-@m2).should eq(@m3)
     end
 
     it "Deben poder multiplicarse 2 matrices" do

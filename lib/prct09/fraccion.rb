@@ -75,10 +75,9 @@ class Fraccion
         Fraccion.new(-@num, @denom)
     end
     
-    # Permite operaciones conmutativas (+ y *) con un entero.
-    # Los resultados serán incorrectos si se utiliza con una división o una resta.
+    # Permite operaciones con un entero. La operación retorna una fracción.
     def coerce(other)
-        [self, other]
+        [Fraccion.new(other, 1), self]
     end
 
     # OTRAS OPERACIONES
