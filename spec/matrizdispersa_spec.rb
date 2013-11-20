@@ -123,12 +123,46 @@ describe Prct09::MatrizDispersa do
 
   describe "Operaciones combinadas" do
     before :all do
-    	# Crear matrices de fracciones y enteros
+      # Crear matrices de fracciones y enteros
+      @m1[0, 0] = 2
+      @m1[0, 1] = 3
+      @m1[1, 0] = 0
+      @m1[1, 1] = 0
+
+      @m4[0, 0] = Prct09::Fraccion.new(0, 1)
+      @m4[0, 1] = Prct09::Fraccion.new(2, 3)
+      @m4[1, 0] = Prct09::Fraccion.new(0, 1)
+      @m4[1, 1] = Prct09::Fraccion.new(0, 1)
     end
-    
-    it "Debe..." do
-      # ...
+
+    it "Deben poder sumarse 2 matrices" do
+      @m6[0, 0] = Prct09::Fraccion.new(2, 1)
+      @m6[1, 0] = Prct09::Fraccion.new(11, 3)
+
+      (@m1+@m4).should eq(@m6)
     end
-    # ...
+    it "Deben poder restarse 2 matrices" do
+      @m6[0, 0] = Prct09::Fraccion.new(-2, 1)
+      @m6[0, 1] = Prct09::Fraccion.new(-7, 3)
+
+      (@m4-@m1).should eq(@m6)
+    end
+    it "Deben poder multiplicarse 2 matrices" do
+      @m6[0, 0] = Prct09::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct09::Fraccion.new(2, 3)
+      @m6[1, 0] = Prct09::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+
+      (@m1*@m4).should eq(@m6)
+    end
+    it "Deben poder compararse 2 matrices" do
+      @m6[0, 0] = Prct09::Fraccion.new(2, 1)
+      @m6[0, 1] = Prct09::Fraccion.new(3, 1)
+      @m6[1, 0] = Prct09::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+
+      @m1.should eq(@m6)
+    end
+
   end
 end
