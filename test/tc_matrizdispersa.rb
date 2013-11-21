@@ -80,7 +80,7 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         assert_equal(@m3, @m1)
 
 	#Mínimo
-        assert_equal(@m1.min,4)
+        assert_equal(@m1.min,0)
 
 	#Máximo
 	assert_equal(@m1.max,4)
@@ -117,7 +117,7 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         assert_equal(@m6, @m4)
 
         #Mínimo
-        assert_equal(@m4.min,Prct09::Fraccion.new(1, 2))
+        assert_equal(@m4.min,Prct09::Fraccion.new(0, 1))
 
 	#Máximo
 	assert_equal(@m4.max,Prct09::Fraccion.new(1, 2))

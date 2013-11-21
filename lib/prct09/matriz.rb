@@ -110,9 +110,10 @@ class Matriz
     end
     s
   end
-	
+
+#Maximo y minimo	
   def max
-    maxi = -9999
+    maxi = self[0,0]
     for i in 0...self.filas
       for j in 0...self.columnas
         if(self[i,j] > maxi)
@@ -120,10 +121,11 @@ class Matriz
         end
       end
     end
+  maxi
   end
 
   def min
-    mini = 9999
+    mini = self[0,0]
     for i in 0...self.filas
       for j in 0...self.columnas
         if(self[i,j] < mini)
@@ -131,6 +133,7 @@ class Matriz
         end
       end
     end
+  mini
   end
 
  protected

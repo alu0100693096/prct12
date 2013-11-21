@@ -73,10 +73,10 @@ describe Prct09::MatrizDensa do
 
       @m1.should eq(@m3)
     end
-    it "Debe poder calcularse el máximo correctamente" do
+    it "Debe poder calcularse el maximo correctamente" do
       (@m1.max).should eq(7)
     end
-    it "Debe poder calcularse el mínimo correctamente" do
+    it "Debe poder calcularse el minimo correctamente" do
       (@m1.min).should eq(1)
     end
   end
@@ -138,10 +138,10 @@ describe Prct09::MatrizDensa do
 
       @m1.should eq(@m3)
     end
-    it "Debe poder calcularse el máximo correctamente" do
+    it "Debe poder calcularse el maximo correctamente" do
       (@m1.max).should eq(Prct09::Fraccion.new(7, 2))
     end
-    it "Debe poder calcularse el mínimo correctamente" do
+    it "Debe poder calcularse el minimo correctamente" do
       (@m1.min).should eq(Prct09::Fraccion.new(1, 2))
     end
   end
