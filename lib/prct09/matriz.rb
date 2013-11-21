@@ -102,7 +102,7 @@ class Matriz
 
   # Cálculo del máximo de los elementos de la matriz
   def max
-    maxi = self[0, 0]
+    maxi = self[0,0]
     for i in 0...self.filas
       for j in 0...self.columnas
         if(self[i,j] > maxi)
@@ -115,7 +115,7 @@ class Matriz
 
   # Cálculo del mínimo de los elementos de la matriz
   def min
-    mini = self[0 ,0]
+    mini = self[0,0]
     for i in 0...self.filas
       for j in 0...self.columnas
         if(self[i,j] < mini)
@@ -123,7 +123,6 @@ class Matriz
         end
       end
     end
-    mini
   end
 
   # Método para convertir a String

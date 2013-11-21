@@ -47,4 +47,3 @@ class MatrizDensa < Matriz
 end # class MatrizDensa
 
 end # module Prct09
-
