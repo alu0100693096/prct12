@@ -100,6 +100,33 @@ class Matriz
     return true
   end
 
+  # Cálculo del máximo de los elementos de la matriz
+  def max
+    maxi = self[0, 0]
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] > maxi)
+          maxi = self[i,j]
+        end
+      end
+    end
+    maxi
+  end
+
+  # Cálculo del mínimo de los elementos de la matriz
+  def min
+    mini = self[0 ,0]
+    for i in 0...self.filas
+      for j in 0...self.columnas
+        if(self[i,j] < mini)
+          mini = self[i,j]
+        end
+      end
+    end
+    mini
+  end
+
+  # Método para convertir a String
   def to_s
     s = ""
     for i in 0...filas do
@@ -109,28 +136,6 @@ class Matriz
       s << "\n"
     end
     s
-  end
-	
-  def max
-    maxi = -9999
-    for i in 0...self.filas
-      for j in 0...self.columnas
-        if(self[i,j] > maxi)
-          maxi = self[i,j]
-        end
-      end
-    end
-  end
-
-  def min
-    mini = 9999
-    for i in 0...self.filas
-      for j in 0...self.columnas
-        if(self[i,j] < mini)
-          mini = self[i,j]
-        end
-      end
-    end
   end
 
  protected
@@ -152,6 +157,6 @@ class Matriz
     end
   end
 
-end
+end # class Matriz
 
-end
+end # module Prct09
