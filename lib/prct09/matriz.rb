@@ -123,6 +123,7 @@ class Matriz
         end
       end
     end
+    mini
   end
 
   # Método para convertir a String
