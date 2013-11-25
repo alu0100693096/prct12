@@ -1,15 +1,15 @@
-require "prct09"
+require "prct11"
 require "test/unit"
 
-class MatrizDispersaFixnum < Prct09::MatrizDispersa
+class MatrizDispersaFixnum < Prct11::MatrizDispersa
     def zero
         0
     end
 end
 
-class MatrizDispersaFraccion < Prct09::MatrizDispersa
+class MatrizDispersaFraccion < Prct11::MatrizDispersa
     def zero
-        Prct09::Fraccion.new(0, 1)
+        Prct11::Fraccion.new(0, 1)
     end
 end
 
@@ -39,15 +39,15 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         @m2[1, 1] = 0
 
         # --Fracciones
-        @m4[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m4[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m4[1, 0] = Prct09::Fraccion.new(1, 2)
-        @m4[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m4[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m4[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m4[1, 0] = Prct11::Fraccion.new(1, 2)
+        @m4[1, 1] = Prct11::Fraccion.new(0, 1)
 
-        @m5[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m5[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m5[1, 0] = Prct09::Fraccion.new(3, 2)
-        @m5[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m5[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m5[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m5[1, 0] = Prct11::Fraccion.new(3, 2)
+        @m5[1, 1] = Prct11::Fraccion.new(0, 1)
     end
 
     def test_enteros
@@ -89,68 +89,68 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
 
     def test_fracciones
         #Suma
-        @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(2, 1)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(2, 1)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m4+@m5)
 
         #Resta
-        @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(-1, 1)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(-1, 1)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m4-@m5)
 
         #Multiplicación
-        @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m4*@m5)
 
         #Comparación
-        @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(1, 2)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(1, 2)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m4)
 
         #Mínimo
-        assert_equal(@m4.min,Prct09::Fraccion.new(0, 1))
+        assert_equal(@m4.min,Prct11::Fraccion.new(0, 1))
 
         #Máximo
-        assert_equal(@m4.max,Prct09::Fraccion.new(1, 2))
+        assert_equal(@m4.max,Prct11::Fraccion.new(1, 2))
 
     end
 
     def test_combinacion
         #Suma
-        @m6[0, 0] = Prct09::Fraccion.new(4, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(1, 2)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(4, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(1, 2)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m1+@m4)
 
         #Resta
-        @m6[0, 0] = Prct09::Fraccion.new(4, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(-1, 2)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(4, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(-1, 2)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m1-@m4)
 
         #Multiplicación
-        @m6[0, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 2)
+        @m6[0, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 2)
         assert_equal(@m6, @m1*@m4)
 
         #Comparación
-        @m6[0, 0] = Prct09::Fraccion.new(4, 1)
-        @m6[0, 1] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 0] = Prct09::Fraccion.new(0, 1)
-        @m6[1, 1] = Prct09::Fraccion.new(0, 1)
+        @m6[0, 0] = Prct11::Fraccion.new(4, 1)
+        @m6[0, 1] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 0] = Prct11::Fraccion.new(0, 1)
+        @m6[1, 1] = Prct11::Fraccion.new(0, 1)
         assert_equal(@m6, @m1)
     end
 

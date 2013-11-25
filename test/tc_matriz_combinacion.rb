@@ -1,27 +1,27 @@
-require "prct09"
+require "prct11"
 require "test/unit"
 
-class MatrizDensaFixnum < Prct09::MatrizDensa
+class MatrizDensaFixnum < Prct11::MatrizDensa
     def zero
         0
     end
 end
 
-class MatrizDensaFraccion < Prct09::MatrizDensa
+class MatrizDensaFraccion < Prct11::MatrizDensa
     def zero
-        Prct09::Fraccion.new(0, 1)
+        Prct11::Fraccion.new(0, 1)
     end
 end
 
-class MatrizDispersaFixnum < Prct09::MatrizDispersa
+class MatrizDispersaFixnum < Prct11::MatrizDispersa
     def zero
         0
     end
 end
 
-class MatrizDispersaFraccion < Prct09::MatrizDispersa
+class MatrizDispersaFraccion < Prct11::MatrizDispersa
     def zero
-        Prct09::Fraccion.new(0, 1)
+        Prct11::Fraccion.new(0, 1)
     end
 end
 
