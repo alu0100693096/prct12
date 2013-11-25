@@ -1,6 +1,6 @@
 # Prct11
 
-Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100693096/prct09.png?branch=master)](https://travis-ci.org/alu0100693096/prct11)
+Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100700459/prct11.png?branch=master)](https://travis-ci.org/alu0100700459/prct11)
 
 Clases que permiten gestionar matrices densas o dispersas de forma diferente
 para mejorar el uso de la memoria.
