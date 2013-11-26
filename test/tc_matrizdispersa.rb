@@ -2,19 +2,23 @@ require "prct11"
 require "test/unit"
 
 class MatrizDispersaFixnum < Prct11::MatrizDispersa
+    #Devuelve un cero.
     def zero
         0
     end
 end
 
 class MatrizDispersaFraccion < Prct11::MatrizDispersa
+    #Devuelve un cero.
     def zero
         Prct11::Fraccion.new(0, 1)
     end
 end
 
+#Clase para probar operaciones entre matrices dispersas.
 class Test_Matriz_Dispersa < Test::Unit::TestCase
 
+    #Crear e inicializar matrices.
     def setup
         # Crear matrices
         # --Enteras
@@ -50,6 +54,7 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
         @m5[1, 1] = Prct11::Fraccion.new(0, 1)
     end
 
+    #Pruebas con enteros.
     def test_enteros
         #Suma
         @m3[0, 0] = 6
@@ -87,6 +92,7 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
 
     end
 
+    #Pruebas con fracciones.
     def test_fracciones
         #Suma
         @m6[0, 0] = Prct11::Fraccion.new(0, 1)
@@ -124,6 +130,7 @@ class Test_Matriz_Dispersa < Test::Unit::TestCase
 
     end
 
+    #Pruebas con enteros y fracciones.
     def test_combinacion
         #Suma
         @m6[0, 0] = Prct11::Fraccion.new(4, 1)

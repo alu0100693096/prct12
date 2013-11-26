@@ -2,26 +2,29 @@ require "prct11"
 
 describe Prct11::Matriz do
   before :all do
-    # Definir las clases concretas
     class MatrizDensaFixnum < Prct11::MatrizDensa
+      #Devuelve un cero.
       def zero
         0
       end
     end
 
     class MatrizDensaFraccion < Prct11::MatrizDensa
+      #Devuelve un cero.
       def zero
         Prct11::Fraccion.new(0, 1)
       end
     end
 
     class MatrizDispersaFixnum < Prct11::MatrizDispersa
+      #Devuelve un cero.
       def zero
         0
       end
     end
 
     class MatrizDispersaFraccion < Prct11::MatrizDispersa
+      #Devuelve un cero.
       def zero
         Prct11::Fraccion.new(0, 1)
       end

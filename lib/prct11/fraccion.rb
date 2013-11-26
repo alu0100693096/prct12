@@ -1,9 +1,12 @@
 module Prct11
 
+#Clase que permite representar fracciones y realizar operaciones entre ellas
 class Fraccion
     include Comparable
+    #num=Numerador. denom=Denominador.
     attr_reader :num, :denom
 
+    #Función para inicializar el objeto de tipo fracción.
     def initialize(n,d)
         raise 'El denominador no puede ser 0' unless d != 0
         @num, @denom = n, d
@@ -15,17 +18,18 @@ class Fraccion
         end
     end
 
-    # OPERACIONES DE CONVERSIÓN
+    #Función para mostrar la fracción como una cadena de caracteres.
     def to_s
         "#{num}/#{denom}"
     end
 
+    #Función para mostrar la fracción en formato flotante.
     def to_f
         # to_f pasa a número flotante
         (@num.to_f/@denom.to_f)
     end
 
-    # OPERACIONES DE COMPARACIÓN
+    #Función que sirve para realizar las operaciones de comparación.
     def <=>(other)
         if !(other.is_a? Fraccion)
             other = Fraccion.new(other, 1)
@@ -34,7 +38,7 @@ class Fraccion
         (d/@denom)*@num <=> (d/other.denom)*other.num
     end
 
-    # OPERACIONES ARITMÉTICAS
+    #Función para sumar una fracción con otro elemento.
     def +(other)
         if !(other.is_a? Fraccion)
             other = Fraccion.new(other, 1)
@@ -43,6 +47,7 @@ class Fraccion
         Fraccion.new((d/@denom)*@num + (d/other.denom)*other.num, d)
     end
 
+    #Función para restar una fracción con otro elemento.
     def -(other)
         if !(other.is_a? Fraccion)
             other = Fraccion.new(other, 1)
@@ -51,6 +56,7 @@ class Fraccion
         Fraccion.new((d/@denom)*@num - (d/other.denom)*other.num, d)
     end
 
+    #Función para multiplicar una fracción con otro elemento.
     def *(other)
         if !(other.is_a? Fraccion)
             Fraccion.new(@num*other, @denom)
@@ -59,6 +65,7 @@ class Fraccion
         end
     end
 
+    #Función para dividir una fracción con otro elemento.
     def /(other)
         if !(other.is_a? Fraccion)
             Fraccion.new(@num, @denom*other)
@@ -67,20 +74,23 @@ class Fraccion
         end
     end
 
+    #Función para hallar el módulo de dos fracciones. 
+    #Como siempre será cero, devolverá la fracción 0/1.
     def %(other)
         Fraccion.new(0, 1)
     end
 
+    #Función para hallar la fracción cambiada de signo.
     def -@
         Fraccion.new(-@num, @denom)
     end
     
-    # Permite operaciones con un entero. La operación retorna una fracción.
+    #Función que permite operaciones con un entero. La operación retorna una fracción.
     def coerce(other)
         [Fraccion.new(other, 1), self]
     end
 
-    # OTRAS OPERACIONES
+    #Función para hallar el valor absoluto de una fracción.
     def abs
         # En el método initialize se llama a "reducir", así que está
         # garantizado que si es negativo, será el numerador el que tenga el
@@ -88,6 +98,7 @@ class Fraccion
         Fraccion.new(@num.abs, @denom)
     end
 
+    #Función para hallar la inversa de una fracción.
     def rec
         # Damos la vuelta a la fracción.
         Fraccion.new(@denom, @num)
@@ -95,8 +106,8 @@ class Fraccion
 
 private
 
-    # Pasa la fracción actual a su forma más reducida y coloca el signo de la
-    # fracción en el numerador.
+    #Función que pasa la fracción actual a su forma más reducida y coloca el signo de la 
+    #fracción en el numerador.
     def reducir
         # Si alguno es negativo, que sea el numerador. Si ambos son negativos,
         # se pasan a positivos.
@@ -114,7 +125,7 @@ private
         end
     end
 
-    # Calcula el máximo común divisor entre dos números enteros a y b.
+    #Función para calcular el máximo común divisor entre dos números enteros a y b.
     def gcd(a, b)
         a,b = a.abs, b.abs
         while b != 0
@@ -123,6 +134,6 @@ private
         a
     end
 
-end # class Fraccion
+end #-- class Fraccion
 
-end # module Prct11
+end #-- module Prct11

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Prct11">Prct11</a>
+      <li><a href="#label-Instalaci%C3%B3n">Instalación</a>
+      <li><a href="#label-Uso">Uso</a>
+      <li><a href="#label-Contribuir">Contribuir</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./prct11_gemspec.html">prct11.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MatrizDensaFixnum.html">MatrizDensaFixnum</a>
+  
+    <li><a href="./MatrizDensaFraccion.html">MatrizDensaFraccion</a>
+  
+    <li><a href="./MatrizDispersaFixnum.html">MatrizDispersaFixnum</a>
+  
+    <li><a href="./MatrizDispersaFraccion.html">MatrizDispersaFraccion</a>
+  
+    <li><a href="./Prct11.html">Prct11</a>
+  
+    <li><a href="./Prct11/Fraccion.html">Prct11::Fraccion</a>
+  
+    <li><a href="./Prct11/Matriz.html">Prct11::Matriz</a>
+  
+    <li><a href="./Prct11/MatrizDensa.html">Prct11::MatrizDensa</a>
+  
+    <li><a href="./Prct11/MatrizDispersa.html">Prct11::MatrizDispersa</a>
+  
+    <li><a href="./Prct11/MatrizDispersa/Posicion.html">Prct11::MatrizDispersa::Posicion</a>
+  
+    <li><a href="./Test_Matriz_Combinacion.html">Test_Matriz_Combinacion</a>
+  
+    <li><a href="./Test_Matriz_Densa.html">Test_Matriz_Densa</a>
+  
+    <li><a href="./Test_Matriz_Dispersa.html">Test_Matriz_Dispersa</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Prct11"><a href="Prct11.html">Prct11</a><span><a href="#label-Prct11">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Estado actual de construcción de la gema: <a
+href="https://travis-ci.org/alu0100700459/prct11.png?branch=master">{Build
+Status</a>]</p>
+
+<p>Clases que permiten gestionar matrices densas o dispersas de forma
+diferente
+para mejorar el uso de la memoria.</p>
+
+<p>La clase Matriz será la interfaz de las clases MatrizDensa y
+MatrizDispersa,
+las cuales son subclases de la clase Matriz e implementan
+de forma adecuada
+las funcionalidades heredadas.</p>
+
+<h2 id="label-Instalaci%C3%B3n">Instalación<span><a href="#label-Instalaci%C3%B3n">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Añadir la siguiente línea al <a href="Gemfile.html">Gemfile</a> de tu
+aplicación:</p>
+
+<pre>gem &#39;prct11&#39;</pre>
+
+<p>Y luego ejecutar:</p>
+
+<pre>$ bundle</pre>
+
+<p>O instálalo manualmente mediante:</p>
+
+<pre>$ gem install prct11</pre>
+
+<h2 id="label-Uso">Uso<span><a href="#label-Uso">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Para utilizar esta librería en tu aplicación Ruby, debes incluir el
+fichero
+prct09:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;prct11&#39;</span>
+</pre>
+
+<p>Para colaborar en la escritura del código se deben instalar las
+dependencias
+de la librería. Esto se hace automáticamente ejecutando:</p>
+
+<pre>bundle</pre>
+
+<p>En caso de no tener bundle instalado o que la versión sea más antigua,
+antes
+hay que ejecutar:</p>
+
+<pre>gem install bundle</pre>
+
+<p>Para utilizar las clases MatrizDensa y MatrizDispersa para los tipos de
+datos que necesites, debes hacer tu propia
+clase y que implemente el método
+<code>zero</code> que devuelva el valor 0 de ese tipo de dato. Ejemplo:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;prct11&quot;</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MatrizDensaEnteros</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Prct11</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">zero</span>
+    <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Contribuir">Contribuir<span><a href="#label-Contribuir">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>1. Haz un fork
+2. Crea tu rama de características (<code>git checkout -b
+my-new-feature</code>)
+3. Haz un commit con tus cambios (<code>git commit
+-am &#39;Add some feature&#39;</code>)
+4. Haz un push de los cambios
+(<code>git push origin my-new-feature</code>)
+5. Crea una Pull Request</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

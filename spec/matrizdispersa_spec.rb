@@ -2,7 +2,6 @@ require "prct11"
 
 describe Prct11::MatrizDispersa do
   before :all do   
-    # Definir las clases concretas
     class MatrizDispersaFixnum < Prct11::MatrizDispersa
       def zero
         0

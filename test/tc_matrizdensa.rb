@@ -2,19 +2,23 @@ require "prct11"
 require "test/unit"
 
 class MatrizDensaFixnum < Prct11::MatrizDensa
+    #Devuelve un cero.
     def zero
         0
     end
 end
 
 class MatrizDensaFraccion < Prct11::MatrizDensa
+    #Devuelve un cero.
     def zero
         Prct11::Fraccion.new(0, 1)
     end
 end
 
+#Clase para probar operaciones entre matrices densas.
 class Test_Matriz_Densa < Test::Unit::TestCase
-
+    
+    #Crear e inicializar matrices.
     def setup
         # Crear matrices
         # --Enteras
@@ -50,6 +54,7 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         @m5[1, 1] = Prct11::Fraccion.new(2, 3)
     end
 
+    #Pruebas con enteros.
     def test_enteros
         #Suma
         @m3[0, 0] = 4
@@ -87,6 +92,7 @@ class Test_Matriz_Densa < Test::Unit::TestCase
 
     end
 
+    #Pruebas con fracciones.
     def test_fracciones
         #Suma
         @m6[0, 0] = Prct11::Fraccion.new(3, 2)
@@ -123,6 +129,7 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         assert_equal(@m4.max,Prct11::Fraccion.new(7, 2))
     end
 
+    #Pruebas con enteros y fracciones.
     def test_combinacion
         #Suma
         @m6[0, 0] = Prct11::Fraccion.new(3, 2)

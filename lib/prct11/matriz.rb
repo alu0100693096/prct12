@@ -1,17 +1,19 @@
 module Prct11
 
+#Clase que permite la representación de matrices y las operaciones entre ellas.
 class Matriz
   include Enumerable
+  #filas=filas. columnas=columnas.
   attr_reader :filas, :columnas
 
-  # Constructor. No crea ningún contenedor
+  #Constructor. No crea ningún contenedor.
   def initialize(filas, columnas)
     validate_sizes(filas, columnas)
     @filas = filas
     @columnas = columnas
   end
 
-  # Método para poder utilizar Enumerable
+  #Método para poder utilizar Enumerable.
   def each
     for i in 0...self.filas
       for j in 0...self.columnas
@@ -20,7 +22,7 @@ class Matriz
     end
   end
 
-  # Suma de matrices
+  #Suma de matrices.
   def +(other)
     if((self.filas == other.filas) && (self.columnas == other.columnas))
       sum = self.class.new(self.filas, self.columnas)
@@ -39,7 +41,7 @@ class Matriz
     end
   end
 
-  # Resta de matrices
+  #Resta de matrices.
   def -(other)
     if((self.filas == other.filas) && (self.columnas == other.columnas))
       sum = self.class.new(self.filas, self.columnas)
@@ -58,7 +60,7 @@ class Matriz
     end
   end
 
-  # Multiplicación de matrices
+  #Multiplicación de matrices.
   def *(other)
     # Comprobamos que el número de columnas de la matriz 1 y el número de filas
     # de la matriz 2 coinciden para poder realizar la multiplicación.
@@ -67,10 +69,10 @@ class Matriz
       return
     end
 
-    # Crea una matriz con tantas filas como la matriz 1 y tantas columnas como la matriz 2.
+    #Crea una matriz con tantas filas como la matriz 1 y tantas columnas como la matriz 2.
     result = self.class.new(filas, other.columnas)
 
-    # Algoritmo de la multiplicación de matrices.
+    #Algoritmo de la multiplicación de matrices.
     for i in 0...result.filas
       for j in 0...result.columnas
         for k in 0...columnas
@@ -85,7 +87,7 @@ class Matriz
     result
   end
 
-  # Comparación de matrices
+  #Comparación de matrices
   def ==(other)
     if(self.filas != other.filas || self.columnas != other.columnas)
       return false
@@ -100,7 +102,7 @@ class Matriz
     return true
   end
 
-  # Cálculo del máximo de los elementos de la matriz
+  #Cálculo del máximo de los elementos de la matriz
   def max
     maxi = self[0,0]
     for i in 0...self.filas
@@ -113,7 +115,7 @@ class Matriz
     maxi
   end
 
-  # Cálculo del mínimo de los elementos de la matriz
+  #Cálculo del mínimo de los elementos de la matriz
   def min
     mini = self[0,0]
     for i in 0...self.filas
@@ -126,7 +128,7 @@ class Matriz
     mini
   end
 
-  # Método para convertir a String
+  #Método para convertir a String
   def to_s
     s = ""
     for i in 0...filas do
@@ -139,24 +141,24 @@ class Matriz
   end
 
  protected
-  # Métodos para ser llamados por las subclases para modificar el nº de filas
-  # y de columnas
+  #Método para ser llamado por las subclases para modificar el nº de filas
   def filas=(value)
     @filas = value
   end
 
+  #Método para ser llamado por las subclases para modificar el nº de columnas
   def columnas=(value)
     @columnas = value
   end
 
-  # Se asegura que los valores pasados están dentro del rango [0, Infinito)
-  # y que son números enteros. En caso contrario lanza una excepción.
+  #Se asegura que los valores pasados están dentro del rango [0, Infinito)
+  #y que son números enteros. En caso contrario lanza una excepción.
   def validate_sizes(*values)
     values.each do |x|
       raise(ArgumentError, "#{x} no es un valor correcto") unless(x.is_a?Integer and x >= 0)
     end
   end
 
-end # class Matriz
+end #-- class Matriz
 
-end # module Prct11
+end #-- module Prct11
