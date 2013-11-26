@@ -45,7 +45,7 @@ clase y que implemente el método `zero` que devuelva el valor 0 de ese tipo de 
 
 ```ruby
 require "prct11"
-class MatrizDensaEnteros < Prct09::MatrizDensa
+class MatrizDensaEnteros < Prct11::MatrizDensa
   def zero
     0
   end
