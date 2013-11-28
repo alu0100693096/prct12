@@ -15,25 +15,21 @@ class Matriz
 
   #Método para poder utilizar Enumerable.
   def each
-    for i in 0...self.filas
-      for j in 0...self.columnas
-        yield self[i, j]
+    filas.times do |i|
+      columnas.times do |j|
+        yield self[i,j]
       end
     end
   end
 
   #Suma de matrices.
   def +(other)
-    if((self.filas == other.filas) && (self.columnas == other.columnas))
-      sum = self.class.new(self.filas, self.columnas)
-      i = 0
-      while i < self.filas do
-        j = 0
-        while j < self.columnas do
+    if((filas == other.filas) && (columnas == other.columnas))
+      sum = self.class.new(filas, columnas)
+      filas.times do |i|
+        columnas.times do |j|
           sum[i, j] = self[i, j] + other[i, j]
-          j = j+1
         end
-        i = i+1
       end
       sum
     else
@@ -43,18 +39,14 @@ class Matriz
 
   #Resta de matrices.
   def -(other)
-    if((self.filas == other.filas) && (self.columnas == other.columnas))
-      sum = self.class.new(self.filas, self.columnas)
-      i = 0
-      while i < self.filas do
-        j = 0
-        while j < self.columnas do
-          sum[i, j] = self[i, j] - other[i, j]
-          j = j+1
+    if((filas == other.filas) && (columnas == other.columnas))
+      res = self.class.new(filas, columnas)
+      filas.times do |i|
+        columnas.times do |j|
+          res[i, j] = self[i, j] - other[i, j]
         end
-        i = i+1
       end
-      sum
+      res
     else
       puts "Las matrices no se pueden restar, no son del mismo tamanio"
     end
@@ -64,7 +56,7 @@ class Matriz
   def *(other)
     # Comprobamos que el número de columnas de la matriz 1 y el número de filas
     # de la matriz 2 coinciden para poder realizar la multiplicación.
-    if self.columnas != other.filas
+    if columnas != other.filas
       raise(ArgumentError, "Matrices no multiplicables.")
       return
     end
@@ -73,14 +65,10 @@ class Matriz
     result = self.class.new(filas, other.columnas)
 
     #Algoritmo de la multiplicación de matrices.
-    for i in 0...result.filas
-      for j in 0...result.columnas
-        for k in 0...columnas
-          if result[i, j] != nil
-            result[i, j] = result[i, j] + (self[i, k] * other[k, j])
-          else
-            result[i, j] = self[i, k] * other[k, j]
-          end
+    0.upto(result.filas-1) do |i|
+      0.upto(result.columnas-1) do |j|
+        0.upto(columnas-1) do |k|
+          result[i, j] = result[i, j] + (self[i, k] * other[k, j])
         end
       end
     end
@@ -89,27 +77,27 @@ class Matriz
 
   #Comparación de matrices
   def ==(other)
-    if(self.filas != other.filas || self.columnas != other.columnas)
+    if(filas != other.filas || columnas != other.columnas)
       return false
     end
-    for i in 0...self.filas
-      for j in 0...self.columnas
+
+    filas.times do |i|
+      columnas.times do |j|
         if(self[i, j] != other[i, j])
           return false
         end
       end
     end
-    return true
+
+    true
   end
 
   #Cálculo del máximo de los elementos de la matriz
   def max
-    maxi = self[0,0]
-    for i in 0...self.filas
-      for j in 0...self.columnas
-        if(self[i,j] > maxi)
-          maxi = self[i,j]
-        end
+    maxi = self[0, 0]
+    self.each do |x|
+      if x > maxi
+        maxi = x
       end
     end
     maxi
@@ -118,11 +106,9 @@ class Matriz
   #Cálculo del mínimo de los elementos de la matriz
   def min
     mini = self[0,0]
-    for i in 0...self.filas
-      for j in 0...self.columnas
-        if(self[i,j] < mini)
-          mini = self[i,j]
-        end
+    self.each do |x|
+      if x < mini
+        mini = x
       end
     end
     mini
@@ -131,8 +117,8 @@ class Matriz
   #Método para convertir a String
   def to_s
     s = ""
-    for i in 0...filas do
-      for j in 0...columnas do
+    filas.times do |i|
+      columnas.times do |j|
         s << " #{self[i, j]}"
       end
       s << "\n"
