@@ -79,6 +79,20 @@ describe Prct11::MatrizDensa do
     it "Debe poder calcularse el minimo correctamente" do
       (@m1.min).should eq(1)
     end
+    it "Debe encontrar un elemento que cumpla un bloque" do
+      tmp = MatrizDensaFixnum.new(3, 3)
+      tmp[0, 0] = 1
+      tmp[0, 1] = 2
+      tmp[0, 2] = 3
+      tmp[1, 0] = 4
+      tmp[1, 1] = 5
+      tmp[1, 2] = 6
+      tmp[2, 0] = 7
+      tmp[2, 1] = 8
+      tmp[2, 2] = 9
+      
+      (tmp.encontrar{|e| e*e >= 16}).should eq([1, 0])
+    end
   end
 
   # FRACCIONES

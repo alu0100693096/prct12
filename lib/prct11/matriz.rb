@@ -125,6 +125,18 @@ class Matriz
     end
     s
   end
+  
+  #Devuelve la posición donde se cumple el bloque pasado como argumento
+  def encontrar
+    filas.times do |i|
+      columnas.times do |j|
+        if(yield(self[i, j]))
+          return i, j
+        end
+      end
+    end
+    nil
+  end
 
  protected
   #Método para ser llamado por las subclases para modificar el nº de filas.
