@@ -190,7 +190,7 @@ clase matriz.</p>
         <div class="method-description">
           
           <p>Constructor. Llama al de la clase madre para las filas y las columnas,  e
-inicializa la matriz a 0 mediante un hash.</p>
+inicializa el hash especificando como valor por defecto el cero.</p>
           
           
             <div class="method-calls-super">
@@ -241,7 +241,7 @@ inicializa la matriz a 0 mediante un hash.</p>
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 66</span>
+            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>)
   <span class="ruby-ivar">@container</span>[<span class="ruby-constant">Posicion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>)]
 <span class="ruby-keyword">end</span></pre>
@@ -274,7 +274,7 @@ inicializa la matriz a 0 mediante un hash.</p>
 
           
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>, <span class="ruby-identifier">valor</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">valor</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">zero</span>
     <span class="ruby-ivar">@container</span>[<span class="ruby-constant">Posicion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fila</span>, <span class="ruby-identifier">columna</span>)] = <span class="ruby-identifier">valor</span>
@@ -305,13 +305,14 @@ inicializa la matriz a 0 mediante un hash.</p>
 
         <div class="method-description">
           
-          <p>Modifica el número de columnas de la matriz.</p>
+          <p>Modifica el número de columnas de la matriz y borra los elementos sobrantes
+si el nuevo número de columnas es menor.</p>
           
           
 
           
           <div class="method-source-code" id="columnas-3D-source">
-            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">columnas=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">validate_sizes</span>(<span class="ruby-identifier">value</span>)
 
@@ -348,13 +349,14 @@ inicializa la matriz a 0 mediante un hash.</p>
 
         <div class="method-description">
           
-          <p>Modifica el número de filas de la matriz.</p>
+          <p>Modifica el número de filas de la matriz y borra los elementos sobrantes si
+el número de filas nuevo es menor.</p>
           
           
 
           
           <div class="method-source-code" id="filas-3D-source">
-            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/prct11/matriz_dispersa.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">filas=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">validate_sizes</span>(<span class="ruby-identifier">value</span>)
 

@@ -18,12 +18,12 @@ class Fraccion
         end
     end
 
-    #Función para mostrar la fracción como una cadena de caracteres.
+    #Función para transformar la fracción a un String.
     def to_s
         "#{num}/#{denom}"
     end
 
-    #Función para mostrar la fracción en formato flotante.
+    #Función para calcular el resultado del cociente en Float.
     def to_f
         # to_f pasa a número flotante
         (@num.to_f/@denom.to_f)

@@ -5,19 +5,19 @@ module Prct11
 #Clase que permite la representación de matrices dispersas. Hereda de la clase matriz.
 class MatrizDispersa < Matriz
   private
-    #Clase que permite acceder a la posición del elemento dentro del hash.
+    #Clase que representa la clave del hash que guarda la matriz dispersa.
     class Posicion
       #f=fila. c=columna.
       attr_accessor :f, :c
-      #Constructor que inicializa los valores de fil y col.
+      #Constructor que inicializa los valores de f y c.
       def initialize(fil, col)
         @f, @c = fil, col
       end
-      #Función que devuelve la posición en el hash del elemento f,c.
+      #Función que devuelve el valor hash de cada objeto.
       def hash
         @f.hash ^ @c.hash
       end
-      #Función para comprobar si dos objetos son iguales.
+      #Función para comprobar si dos objetos son iguales dentro de un hash.
       def eql?(other)
         @f == other.f and @c == other.c
       end
@@ -26,13 +26,14 @@ class MatrizDispersa < Matriz
   public
  
   #Constructor. Llama al de la clase madre para las filas y las columnas, 
-  #e inicializa la matriz a 0 mediante un hash.
+  #e inicializa el hash especificando como valor por defecto el cero.
   def initialize(filas, columnas)
     super(filas, columnas)
     @container = Hash.new(zero)
   end
 
-  #Modifica el número de filas de la matriz.
+  #Modifica el número de filas de la matriz y borra los elementos sobrantes si
+  #el número de filas nuevo es menor.
   def filas=(value)
     validate_sizes(value)
 
@@ -47,7 +48,8 @@ class MatrizDispersa < Matriz
     filas = value
   end
 
-  #Modifica el número de columnas de la matriz.
+  #Modifica el número de columnas de la matriz y borra los elementos sobrantes
+  #si el nuevo número de columnas es menor.
   def columnas=(value)
     validate_sizes(value)
 

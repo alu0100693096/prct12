@@ -1,6 +1,6 @@
 module Prct11
 
-#Clase que permite la representación de matrices y las operaciones entre ellas.
+#Clase que permite la representación y manipulación de matrices.
 class Matriz
   include Enumerable
   #filas=filas. columnas=columnas.
@@ -13,7 +13,7 @@ class Matriz
     @columnas = columnas
   end
 
-  #Método para poder utilizar Enumerable.
+  #Iterador que recorre todos los elementos de la matriz.
   def each
     filas.times do |i|
       columnas.times do |j|
@@ -75,7 +75,7 @@ class Matriz
     result
   end
 
-  #Comparación de matrices
+  #Comparación de matrices.
   def ==(other)
     if(filas != other.filas || columnas != other.columnas)
       return false
@@ -92,7 +92,7 @@ class Matriz
     true
   end
 
-  #Cálculo del máximo de los elementos de la matriz
+  #Cálculo del máximo de los elementos de la matriz.
   def max
     maxi = self[0, 0]
     self.each do |x|
@@ -103,7 +103,7 @@ class Matriz
     maxi
   end
 
-  #Cálculo del mínimo de los elementos de la matriz
+  #Cálculo del mínimo de los elementos de la matriz.
   def min
     mini = self[0,0]
     self.each do |x|
@@ -114,7 +114,7 @@ class Matriz
     mini
   end
 
-  #Método para convertir a String
+  #Método para convertir a String.
   def to_s
     s = ""
     filas.times do |i|
@@ -127,12 +127,12 @@ class Matriz
   end
 
  protected
-  #Método para ser llamado por las subclases para modificar el nº de filas
+  #Método para ser llamado por las subclases para modificar el nº de filas.
   def filas=(value)
     @filas = value
   end
 
-  #Método para ser llamado por las subclases para modificar el nº de columnas
+  #Método para ser llamado por las subclases para modificar el nº de columnas.
   def columnas=(value)
     @columnas = value
   end
