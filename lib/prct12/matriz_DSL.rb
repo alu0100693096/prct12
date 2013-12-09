@@ -108,10 +108,10 @@ class MatrizDSL
 
   # Añade una matriz (representada como Array de Arrays) para realizar la
   # operación. Se pueden añadir tantas como se desee y el orden en el que se
-  # indican importa.
+  # indican importa. Suponemos que el tamaño de todas las filas es igual.
   def operando(def_matriz)
     if (def_matriz.is_a? Array) && (def_matriz[0].is_a? Array)
-      @mats.push def_matriz
+      @mats.push crear_matriz(def_matriz)
     else
       raise ArgumentError, "Se esperaba un Array de Array y se recibio otra cosa."
     end
@@ -126,6 +126,28 @@ class MatrizDSL
   # Devuelve la matriz resultado de la operación utilizando el tipo indicado en
   # el constructor.
   def to_m
+
+  end
+
+protected
+
+  # Este método protegido crea una matriz del tipo indicado en el constructor a
+  # partir de un Array de Array.
+  def crear_matriz(mat)
+    m = @tipo.new(mat.size, mat[0].size)
+    mat.each_with_index do |x, i|
+      x.each_with_index do |y, j|
+        m[i, j] = y
+      end
+    end
+    m
+  end
+
+  # Este método protegido intenta calcular el resultado de la operación entre
+  # los operandos introducidos y lo devuelve como un nuevo objeto de la clase
+  # especificada en el constructor. Lanzará una excepción si hay datos sin
+  # introducir.
+  def calcular
 
   end
 
