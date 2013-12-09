@@ -25,6 +25,8 @@ O instálalo manualmente mediante:
 
 ## Uso
 
+## Librería
+
 Para utilizar esta librería en tu aplicación Ruby, debes incluir el fichero
 prct12:
 
@@ -51,6 +53,27 @@ class MatrizDensaEnteros < Prct12::MatrizDensa
   end
 end
 ```
+
+## DSL
+
+Esta librería viene también con un DSL específico que permite definir operaciones entre matrices con más facilidad.
+Para ello, la sintaxis es la siguiente:
+
+```ruby
+test = Prct12::MatrizDSL(MatrizDensaEnteros) do
+  operacion <nombre_operacion>
+  [salida <nombre_salida> [<nombre_fichero>]]*
+  [operando <definicion_operando>]*
+end
+```
+
+`<nombre_operacion> = Prct12::TipoOperacion::{SUMA | RESTA | MULTIPLICACION | NINGUNA}`
+`<nombre_salida> = Prct12::TipoSalida::{CONSOLA | FICHERO | NINGUNA}`
+`<definicion_operando> = Array de Array. Ej: [[1,2,3], [4,5,6]]`
+
+- Si se especifican varias operaciones, tendrá validez la última que aparezca.
+- Se pueden especificar varias salidas o ninguna, pero si se especifica `Prct12::TipoSalida::NINGUNA`, las demás se invalidan.
+- Se pueden especificar tantos operandos como se deseen.
 
 ## Contribuir
 
