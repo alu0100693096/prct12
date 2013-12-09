@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Prct11::Fraccion - RDoc Documentation</title>
+<title>class Prct12::Fraccion - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -49,7 +49,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/prct11/fraccion.rb
+    <li>lib/prct12/fraccion.rb
   </ul>
 </nav>
 
@@ -124,6 +124,8 @@
   
     <li class="file"><a href="../Gemfile.html">Gemfile</a>
   
+    <li class="file"><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
     <li class="file"><a href="../Guardfile.html">Guardfile</a>
   
     <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
@@ -134,7 +136,7 @@
   
     <li class="file"><a href="../doc/created_rid.html">created.rid</a>
   
-    <li class="file"><a href="../prct11_gemspec.html">prct11.gemspec</a>
+    <li class="file"><a href="../prct12_gemspec.html">prct12.gemspec</a>
   
   </ul>
 </nav>
@@ -152,17 +154,17 @@
   
     <li><a href="../MatrizDispersaFraccion.html">MatrizDispersaFraccion</a>
   
-    <li><a href="../Prct11.html">Prct11</a>
+    <li><a href="../Prct12.html">Prct12</a>
   
-    <li><a href="../Prct11/Fraccion.html">Prct11::Fraccion</a>
+    <li><a href="../Prct12/Fraccion.html">Prct12::Fraccion</a>
   
-    <li><a href="../Prct11/Matriz.html">Prct11::Matriz</a>
+    <li><a href="../Prct12/Matriz.html">Prct12::Matriz</a>
   
-    <li><a href="../Prct11/MatrizDensa.html">Prct11::MatrizDensa</a>
+    <li><a href="../Prct12/MatrizDensa.html">Prct12::MatrizDensa</a>
   
-    <li><a href="../Prct11/MatrizDispersa.html">Prct11::MatrizDispersa</a>
+    <li><a href="../Prct12/MatrizDispersa.html">Prct12::MatrizDispersa</a>
   
-    <li><a href="../Prct11/MatrizDispersa/Posicion.html">Prct11::MatrizDispersa::Posicion</a>
+    <li><a href="../Prct12/MatrizDispersa/Posicion.html">Prct12::MatrizDispersa::Posicion</a>
   
     <li><a href="../Test_Matriz_Combinacion.html">Test_Matriz_Combinacion</a>
   
@@ -177,7 +179,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class Prct11::Fraccion</h1>
+  <h1 class="class">class Prct12::Fraccion</h1>
 
   <div id="description" class="description">
     
@@ -255,7 +257,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 10</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">n</span>,<span class="ruby-identifier">d</span>)
     <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;El denominador no puede ser 0&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
     <span class="ruby-ivar">@num</span>, <span class="ruby-ivar">@denom</span> = <span class="ruby-identifier">n</span>, <span class="ruby-identifier">d</span>
@@ -302,7 +304,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="25-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">%</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -335,7 +337,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fraccion</span>)
         <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@num</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>, <span class="ruby-ivar">@denom</span>)
@@ -372,7 +374,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fraccion</span>)
         <span class="ruby-identifier">other</span> = <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>, <span class="ruby-value">1</span>)
@@ -409,7 +411,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 51</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fraccion</span>)
         <span class="ruby-identifier">other</span> = <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>, <span class="ruby-value">1</span>)
@@ -446,7 +448,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="2D-40-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 84</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-@</span>
     <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">-</span><span class="ruby-ivar">@num</span>, <span class="ruby-ivar">@denom</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -479,7 +481,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="2F-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fraccion</span>)
         <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@num</span>, <span class="ruby-ivar">@denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>)
@@ -516,7 +518,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fraccion</span>)
         <span class="ruby-identifier">other</span> = <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>, <span class="ruby-value">1</span>)
@@ -553,7 +555,7 @@ devolverá la fracción 0/1.</p>
 
           
           <div class="method-source-code" id="abs-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 94</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">abs</span>
     <span class="ruby-comment"># En el método initialize se llama a &quot;reducir&quot;, así que está</span>
     <span class="ruby-comment"># garantizado que si es negativo, será el numerador el que tenga el</span>
@@ -590,7 +592,7 @@ fracción.</p>
 
           
           <div class="method-source-code" id="coerce-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 89</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">other</span>)
     [<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>, <span class="ruby-value">1</span>), <span class="ruby-keyword">self</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -623,7 +625,7 @@ fracción.</p>
 
           
           <div class="method-source-code" id="rec-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 102</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">rec</span>
     <span class="ruby-comment"># Damos la vuelta a la fracción.</span>
     <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@denom</span>, <span class="ruby-ivar">@num</span>)
@@ -657,7 +659,7 @@ fracción.</p>
 
           
           <div class="method-source-code" id="to_f-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 27</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>
     <span class="ruby-comment"># to_f pasa a número flotante</span>
     (<span class="ruby-ivar">@num</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">/</span><span class="ruby-ivar">@denom</span>.<span class="ruby-identifier">to_f</span>)
@@ -691,7 +693,7 @@ fracción.</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/prct11/fraccion.rb, line 22</span>
+            <pre><span class="ruby-comment"># File lib/prct12/fraccion.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
     <span class="ruby-node">&quot;#{num}/#{denom}&quot;</span>
 <span class="ruby-keyword">end</span></pre>

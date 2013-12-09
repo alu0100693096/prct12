@@ -48,7 +48,7 @@
   <nav class="section">
     <h3 class="section-header">Table of Contents</h3>
     <ul>
-      <li><a href="#label-Prct11">Prct11</a>
+      <li><a href="#label-Prct12">Prct12</a>
       <li><a href="#label-Instalaci%C3%B3n">Instalación</a>
       <li><a href="#label-Uso">Uso</a>
       <li><a href="#label-Contribuir">Contribuir</a>
@@ -65,6 +65,8 @@
   
     <li class="file"><a href="./Gemfile.html">Gemfile</a>
   
+    <li class="file"><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
     <li class="file"><a href="./Guardfile.html">Guardfile</a>
   
     <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
@@ -75,7 +77,7 @@
   
     <li class="file"><a href="./doc/created_rid.html">created.rid</a>
   
-    <li class="file"><a href="./prct11_gemspec.html">prct11.gemspec</a>
+    <li class="file"><a href="./prct12_gemspec.html">prct12.gemspec</a>
   
   </ul>
 </nav>
@@ -93,17 +95,17 @@
   
     <li><a href="./MatrizDispersaFraccion.html">MatrizDispersaFraccion</a>
   
-    <li><a href="./Prct11.html">Prct11</a>
+    <li><a href="./Prct12.html">Prct12</a>
   
-    <li><a href="./Prct11/Fraccion.html">Prct11::Fraccion</a>
+    <li><a href="./Prct12/Fraccion.html">Prct12::Fraccion</a>
   
-    <li><a href="./Prct11/Matriz.html">Prct11::Matriz</a>
+    <li><a href="./Prct12/Matriz.html">Prct12::Matriz</a>
   
-    <li><a href="./Prct11/MatrizDensa.html">Prct11::MatrizDensa</a>
+    <li><a href="./Prct12/MatrizDensa.html">Prct12::MatrizDensa</a>
   
-    <li><a href="./Prct11/MatrizDispersa.html">Prct11::MatrizDispersa</a>
+    <li><a href="./Prct12/MatrizDispersa.html">Prct12::MatrizDispersa</a>
   
-    <li><a href="./Prct11/MatrizDispersa/Posicion.html">Prct11::MatrizDispersa::Posicion</a>
+    <li><a href="./Prct12/MatrizDispersa/Posicion.html">Prct12::MatrizDispersa::Posicion</a>
   
     <li><a href="./Test_Matriz_Combinacion.html">Test_Matriz_Combinacion</a>
   
@@ -119,10 +121,10 @@
 
 <div id="documentation" class="description">
   
-<h1 id="label-Prct11"><a href="Prct11.html">Prct11</a><span><a href="#label-Prct11">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="label-Prct12"><a href="Prct12.html">Prct12</a><span><a href="#label-Prct12">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>Estado actual de construcción de la gema: <a
-href="https://travis-ci.org/alu0100700459/prct11.png?branch=master">{Build
+href="https://travis-ci.org/alu0100700459/prct12.png?branch=master">{Build
 Status</a>]</p>
 
 <p>Clases que permiten gestionar matrices densas o dispersas de forma
@@ -140,7 +142,7 @@ las funcionalidades heredadas.</p>
 <p>Añadir la siguiente línea al <a href="Gemfile.html">Gemfile</a> de tu
 aplicación:</p>
 
-<pre>gem &#39;prct11&#39;</pre>
+<pre>gem &#39;prct12&#39;</pre>
 
 <p>Y luego ejecutar:</p>
 
@@ -148,15 +150,15 @@ aplicación:</p>
 
 <p>O instálalo manualmente mediante:</p>
 
-<pre>$ gem install prct11</pre>
+<pre>$ gem install prct12</pre>
 
 <h2 id="label-Uso">Uso<span><a href="#label-Uso">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Para utilizar esta librería en tu aplicación Ruby, debes incluir el
 fichero
-prct09:</p>
+prct12:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;prct11&#39;</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;prct12&#39;</span>
 </pre>
 
 <p>Para colaborar en la escritura del código se deben instalar las
@@ -176,8 +178,8 @@ datos que necesites, debes hacer tu propia
 clase y que implemente el método
 <code>zero</code> que devuelva el valor 0 de ese tipo de dato. Ejemplo:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;prct11&quot;</span>
-<span class="ruby-keyword">class</span> <span class="ruby-constant">MatrizDensaEnteros</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Prct11</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;prct12&quot;</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MatrizDensaEnteros</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Prct12</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">zero</span>
     <span class="ruby-value">0</span>
   <span class="ruby-keyword">end</span>
