@@ -1,6 +1,6 @@
-require "prct11/matriz"
+require "prct12/matriz"
 
-module Prct11
+module Prct12
 
 #Clase que permite la representación de matrices densas. Hereda de la clase matriz.
 class MatrizDensa < Matriz
@@ -53,4 +53,4 @@ class MatrizDensa < Matriz
 
 end # class MatrizDensa
 
-end # module Prct11
+end # module Prct12

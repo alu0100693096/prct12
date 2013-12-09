@@ -1,8 +1,8 @@
-require "prct11"
+require "prct12"
 require "test/unit"
 
 #Clase para devolver un cero en matrices densas de enteros.
-class MatrizDensaFixnum < Prct11::MatrizDensa
+class MatrizDensaFixnum < Prct12::MatrizDensa
     #Devuelve un cero.
     def zero
         0
@@ -10,15 +10,15 @@ class MatrizDensaFixnum < Prct11::MatrizDensa
 end
 
 #Clase para devolver un cero en matrices densas de fracciones.
-class MatrizDensaFraccion < Prct11::MatrizDensa
+class MatrizDensaFraccion < Prct12::MatrizDensa
     #Devuelve un cero.
     def zero
-        Prct11::Fraccion.new(0, 1)
+        Prct12::Fraccion.new(0, 1)
     end
 end
 
 #Clase para devolver un cero en matrices dispersas de enteros.
-class MatrizDispersaFixnum < Prct11::MatrizDispersa
+class MatrizDispersaFixnum < Prct12::MatrizDispersa
     #Devuelve un cero.
     def zero
         0
@@ -26,10 +26,10 @@ class MatrizDispersaFixnum < Prct11::MatrizDispersa
 end
 
 #Clase para devolver un cero en matrices dispersas de fracciones.
-class MatrizDispersaFraccion < Prct11::MatrizDispersa
+class MatrizDispersaFraccion < Prct12::MatrizDispersa
     #Devuelve un cero.
     def zero
-        Prct11::Fraccion.new(0, 1)
+        Prct12::Fraccion.new(0, 1)
     end
 end
 

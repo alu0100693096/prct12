@@ -1,6 +1,6 @@
-require "prct11/matriz"
+require "prct12/matriz"
 
-module Prct11
+module Prct12
 
 #Clase que permite la representación de matrices dispersas. Hereda de la clase matriz.
 class MatrizDispersa < Matriz
@@ -80,4 +80,4 @@ class MatrizDispersa < Matriz
 
 end # class MatrizDispersa
 
-end # module Prct11
+end # module Prct12

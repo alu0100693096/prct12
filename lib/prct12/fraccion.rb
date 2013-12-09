@@ -1,4 +1,4 @@
-module Prct11
+module Prct12
 
 #Clase que permite representar fracciones y realizar operaciones entre ellas
 class Fraccion
@@ -136,4 +136,4 @@ private
 
 end #-- class Fraccion
 
-end #-- module Prct11
+end #-- module Prct12

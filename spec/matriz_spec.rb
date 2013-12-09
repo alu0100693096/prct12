@@ -1,32 +1,32 @@
-require "prct11"
+require "prct12"
 
-describe Prct11::Matriz do
+describe Prct12::Matriz do
   before :all do
-    class MatrizDensaFixnum < Prct11::MatrizDensa
+    class MatrizDensaFixnum < Prct12::MatrizDensa
       #Devuelve un cero.
       def zero
         0
       end
     end
 
-    class MatrizDensaFraccion < Prct11::MatrizDensa
+    class MatrizDensaFraccion < Prct12::MatrizDensa
       #Devuelve un cero.
       def zero
-        Prct11::Fraccion.new(0, 1)
+        Prct12::Fraccion.new(0, 1)
       end
     end
 
-    class MatrizDispersaFixnum < Prct11::MatrizDispersa
+    class MatrizDispersaFixnum < Prct12::MatrizDispersa
       #Devuelve un cero.
       def zero
         0
       end
     end
 
-    class MatrizDispersaFraccion < Prct11::MatrizDispersa
+    class MatrizDispersaFraccion < Prct12::MatrizDispersa
       #Devuelve un cero.
       def zero
-        Prct11::Fraccion.new(0, 1)
+        Prct12::Fraccion.new(0, 1)
       end
     end
   end
@@ -92,49 +92,49 @@ describe Prct11::Matriz do
       @m2 = MatrizDispersaFraccion.new(2, 2)
       @m3 = MatrizDensaFraccion.new(2, 2)
 
-      @m1[0, 0] = Prct11::Fraccion.new(3, 1)
-      @m1[0, 1] = Prct11::Fraccion.new(4, 3)
-      @m1[1, 0] = Prct11::Fraccion.new(2, 6)
-      @m1[1, 1] = Prct11::Fraccion.new(9, 13)
+      @m1[0, 0] = Prct12::Fraccion.new(3, 1)
+      @m1[0, 1] = Prct12::Fraccion.new(4, 3)
+      @m1[1, 0] = Prct12::Fraccion.new(2, 6)
+      @m1[1, 1] = Prct12::Fraccion.new(9, 13)
 
-      @m2[0, 0] = Prct11::Fraccion.new(13, 2)
-      @m2[0, 1] = Prct11::Fraccion.new(0, 1)
-      @m2[1, 0] = Prct11::Fraccion.new(0, 1)
-      @m2[1, 1] = Prct11::Fraccion.new(5, 3)
+      @m2[0, 0] = Prct12::Fraccion.new(13, 2)
+      @m2[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m2[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m2[1, 1] = Prct12::Fraccion.new(5, 3)
     end
 
     it "Deben poder sumarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(19, 2)
-      @m3[0, 1] = Prct11::Fraccion.new(4, 3)
-      @m3[1, 0] = Prct11::Fraccion.new(1, 3)
-      @m3[1, 1] = Prct11::Fraccion.new(92, 39)
+      @m3[0, 0] = Prct12::Fraccion.new(19, 2)
+      @m3[0, 1] = Prct12::Fraccion.new(4, 3)
+      @m3[1, 0] = Prct12::Fraccion.new(1, 3)
+      @m3[1, 1] = Prct12::Fraccion.new(92, 39)
 
       (@m1+@m2).should eq(@m3)
     end
 
     it "Deben poder restarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(-7, 2)
-      @m3[0, 1] = Prct11::Fraccion.new(4, 3)
-      @m3[1, 0] = Prct11::Fraccion.new(1, 3)
-      @m3[1, 1] = Prct11::Fraccion.new(-38, 39)
+      @m3[0, 0] = Prct12::Fraccion.new(-7, 2)
+      @m3[0, 1] = Prct12::Fraccion.new(4, 3)
+      @m3[1, 0] = Prct12::Fraccion.new(1, 3)
+      @m3[1, 1] = Prct12::Fraccion.new(-38, 39)
 
       (@m1-@m2).should eq(@m3)
     end
 
     it "Deben poder multiplicarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(39, 2)
-      @m3[0, 1] = Prct11::Fraccion.new(20, 9)
-      @m3[1, 0] = Prct11::Fraccion.new(13, 6)
-      @m3[1, 1] = Prct11::Fraccion.new(15, 13)
+      @m3[0, 0] = Prct12::Fraccion.new(39, 2)
+      @m3[0, 1] = Prct12::Fraccion.new(20, 9)
+      @m3[1, 0] = Prct12::Fraccion.new(13, 6)
+      @m3[1, 1] = Prct12::Fraccion.new(15, 13)
 
       (@m1*@m2).should eq(@m3)
     end
 
     it "Deben poder compararse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(13, 2)
-      @m3[0, 1] = Prct11::Fraccion.new(0, 1)
-      @m3[1, 0] = Prct11::Fraccion.new(0, 1)
-      @m3[1, 1] = Prct11::Fraccion.new(5, 3)
+      @m3[0, 0] = Prct12::Fraccion.new(13, 2)
+      @m3[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m3[1, 1] = Prct12::Fraccion.new(5, 3)
 
       @m2.should eq(@m3)
     end
@@ -152,44 +152,44 @@ describe Prct11::Matriz do
       @m1[1, 0] = 4
       @m1[1, 1] = -9
 
-      @m2[0, 0] = Prct11::Fraccion.new(12, 7)
-      @m2[0, 1] = Prct11::Fraccion.new(0, 1)
-      @m2[1, 0] = Prct11::Fraccion.new(3, 2)
-      @m2[1, 1] = Prct11::Fraccion.new(0, 1)
+      @m2[0, 0] = Prct12::Fraccion.new(12, 7)
+      @m2[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m2[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m2[1, 1] = Prct12::Fraccion.new(0, 1)
     end
 
     it "Deben poder sumarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(96, 7)
-      @m3[0, 1] = Prct11::Fraccion.new(6, 1)
-      @m3[1, 0] = Prct11::Fraccion.new(11, 2)
-      @m3[1, 1] = Prct11::Fraccion.new(-9, 1)
+      @m3[0, 0] = Prct12::Fraccion.new(96, 7)
+      @m3[0, 1] = Prct12::Fraccion.new(6, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(11, 2)
+      @m3[1, 1] = Prct12::Fraccion.new(-9, 1)
 
       (@m1+@m2).should eq(@m3)
     end
 
     it "Deben poder restarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(72, 7)
-      @m3[0, 1] = Prct11::Fraccion.new(6, 1)
-      @m3[1, 0] = Prct11::Fraccion.new(5, 2)
-      @m3[1, 1] = Prct11::Fraccion.new(-9, 1)
+      @m3[0, 0] = Prct12::Fraccion.new(72, 7)
+      @m3[0, 1] = Prct12::Fraccion.new(6, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(5, 2)
+      @m3[1, 1] = Prct12::Fraccion.new(-9, 1)
 
       (@m1-@m2).should eq(@m3)
     end
 
     it "Deben poder multiplicarse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(207, 7)
-      @m3[0, 1] = Prct11::Fraccion.new(0, 1)
-      @m3[1, 0] = Prct11::Fraccion.new(-93, 14)
-      @m3[1, 1] = Prct11::Fraccion.new(0, 1)
+      @m3[0, 0] = Prct12::Fraccion.new(207, 7)
+      @m3[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(-93, 14)
+      @m3[1, 1] = Prct12::Fraccion.new(0, 1)
 
       (@m1*@m2).should eq(@m3)
     end
 
     it "Deben poder compararse 2 matrices" do
-      @m3[0, 0] = Prct11::Fraccion.new(12, 7)
-      @m3[0, 1] = Prct11::Fraccion.new(0, 1)
-      @m3[1, 0] = Prct11::Fraccion.new(3, 2)
-      @m3[1, 1] = Prct11::Fraccion.new(0, 1)
+      @m3[0, 0] = Prct12::Fraccion.new(12, 7)
+      @m3[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m3[1, 1] = Prct12::Fraccion.new(0, 1)
 
       @m2.should eq(@m3)
     end

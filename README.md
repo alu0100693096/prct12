@@ -1,6 +1,6 @@
-# Prct11
+# Prct12
 
-Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100700459/prct11.png?branch=master)](https://travis-ci.org/alu0100700459/prct11)
+Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100700459/prct12.png?branch=master)](https://travis-ci.org/alu0100700459/prct12)
 
 Clases que permiten gestionar matrices densas o dispersas de forma diferente
 para mejorar el uso de la memoria.
@@ -13,7 +13,7 @@ las funcionalidades heredadas.
 
 Añadir la siguiente línea al Gemfile de tu aplicación:
 
-    gem 'prct11'
+    gem 'prct12'
 
 Y luego ejecutar:
 
@@ -21,14 +21,14 @@ Y luego ejecutar:
 
 O instálalo manualmente mediante:
 
-    $ gem install prct11
+    $ gem install prct12
 
 ## Uso
 
 Para utilizar esta librería en tu aplicación Ruby, debes incluir el fichero
-prct09:
+prct12:
 
-    require 'prct11'
+    require 'prct12'
 
 Para colaborar en la escritura del código se deben instalar las dependencias
 de la librería. Esto se hace automáticamente ejecutando:
@@ -44,8 +44,8 @@ Para utilizar las clases MatrizDensa y MatrizDispersa para los tipos de datos qu
 clase y que implemente el método `zero` que devuelva el valor 0 de ese tipo de dato. Ejemplo:
 
 ```ruby
-require "prct11"
-class MatrizDensaEnteros < Prct11::MatrizDensa
+require "prct12"
+class MatrizDensaEnteros < Prct12::MatrizDensa
   def zero
     0
   end

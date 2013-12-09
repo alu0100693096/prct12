@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'prct11/version'
+require 'prct12/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "prct11"
-  spec.version       = Prct11::VERSION
+  spec.name          = "prct12"
+  spec.version       = Prct12::VERSION
   spec.authors       = ["Laura Fariña", "Sergio Afonso"]
   spec.email         = ["alu0100693096@ull.edu.es", "alu0100700459@ull.edu.es"]
   spec.description   = %q{Clases que permiten gestionar matrices densas o dispersas de forma diferente para mejorar el uso de la memoria.}
   spec.summary       = %q{Conjunto de clases para la gestión de matrices dispersas o densas.}
-  spec.homepage      = "https://github.com/alu0100693096/prct11"
+  spec.homepage      = "https://github.com/alu0100693096/prct12"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

@@ -1,4 +1,4 @@
-module Prct11
+module Prct12
 
 #Clase que permite la representación y manipulación de matrices.
 class Matriz
@@ -159,4 +159,4 @@ class Matriz
 
 end #-- class Matriz
 
-end #-- module Prct11
+end #-- module Prct12
