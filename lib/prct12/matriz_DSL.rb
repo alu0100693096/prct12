@@ -2,13 +2,6 @@ require "prct12/matriz"
 
 module Prct12
 
-# Módulo que agrupa los símbolos que identifican los diversos tipos de matrices
-# permitidos.
-module TipoMatriz
-  DENSA =     :densa
-  DISPERSA =  :dispersa
-end
-
 # Módulo que agrupa los símbolos que identifican las distintas operaciones que
 # se pueden realizar entre matrices.
 module TipoOperacion
@@ -32,7 +25,13 @@ class MatrizDSL
   # El constructor. Permite definir el tipo de matriz que se va a crear y sus
   # características. Un ejemplo de instanciación de la clase MatrizDSL sería:
   #
-  # matriz = Prct12::MatrizDSL(Prct12::TipoMatriz::DENSA) do
+  # class MatrizDensaFixnum < Prct12::MatrizDensa
+  #   def zero
+  #     0
+  #   end
+  # end
+  #
+  # matriz = Prct12::MatrizDSL(MatrizDensaFixnum) do
   #   operacion Prct12::TipoOperacion::SUMA
   #   salida Prct12::TipoSalida::FICHERO, "salida.txt"
   #   operando [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
