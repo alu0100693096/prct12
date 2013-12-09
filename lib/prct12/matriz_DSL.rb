@@ -9,6 +9,7 @@ module TipoOperacion
   RESTA =           :resta
   MULTIPLICACION =  :multiplicacion
   DIVISION =        :division
+  NINGUNA =         :ninguna
 end
 
 # Módulo que agrupa los símbolos que identifican los distintos medios por los
@@ -38,13 +39,34 @@ class MatrizDSL
   #   operando [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
   # end
   def initialize(tipo_matriz, &bloque)
+    if !(tipo_matriz.is_a? Class)
+      raise ArgumentError, "Se esperaba que el tipo del argumento fuera una clase"
+    end
 
+    @tipo = tipo_matriz
+    @op = TipoOperacion::NINGUNA
+    @out = []
+    @mats = []
+
+    instance_eval(&bloque)
   end
 
   # Indica la operación a realizar. Si se especifica varias veces, prevalece la
   # última.
   def operacion(tipo_operacion)
 
+    # Recorremos el Array de constantes del módulo TipoOperacion y si hay algún
+    # símbolo que tiene el mismo valor, es que se ha introducido un valor
+    # válido y lo podemos asignar.
+    TipoOperacion.constants.each do |x|
+      if(TipoOperacion.const_get(x) == tipo_operacion)
+        @op = tipo_operacion
+        return
+      end
+    end
+
+    # Si el valor no es válido, lo indicamos lanzando una excepción
+    raise ArgumentError, "Se esperaba que el argumento fuera una constante del modulo TipoOperacion valida"
   end
 
   # Indica los distintos métodos de salida que se utilizarán para mostrar el
@@ -55,6 +77,30 @@ class MatrizDSL
   #
   # Especificar NINGUNA invalida cualquier otra opción.
   def salida(tipo_salida, fichero_salida = "")
+
+    # Si ya se ha especificado NINGUNA, se desecha cualquier otra opción.
+    if (@out.size == 1) && (@out[0] == TipoSalida::NINGUNA)
+      return
+    end
+
+    # Buscamos cuál fue el tipo que se indicó
+    TipoSalida.constants.each do |x|
+      if(TipoSalida.const_get(x) == tipo_salida)
+
+        # Si el tipo no es NINGUNA, lo añadimos y eliminamos duplicados
+        if tipo_salida != TipoSalida::NINGUNA
+          @out.push tipo_salida
+          @out.uniq!
+
+        # Si el tipo es NINGUNA, se eliminan todas las salidas y se deja sólo
+        # esa.
+        else
+          @out.clear
+          @out.push tipo_salida
+        end
+        return
+      end
+    end
 
   end
 
