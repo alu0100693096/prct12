@@ -8,7 +8,6 @@ module TipoOperacion
   SUMA =            :suma
   RESTA =           :resta
   MULTIPLICACION =  :multiplicacion
-  DIVISION =        :division
   NINGUNA =         :ninguna
 end
 
@@ -43,12 +42,43 @@ class MatrizDSL
       raise ArgumentError, "Se esperaba que el tipo del argumento fuera una clase"
     end
 
-    @tipo = tipo_matriz
-    @op = TipoOperacion::NINGUNA
-    @out = []
-    @mats = []
+    @tipo = tipo_matriz           # tipo=Subclase concreta de MatrizDensa o MatrizDispersa
+    @op = TipoOperacion::NINGUNA  # op=Operación aritmética a realizar
+    @out = []                     # out=Modos de salida
+    @file = ""                    # file=Nombre del fichero de salida
+    @mats = []                    # mats=Array de matrices
 
+    # Recuperamos toda la información pasada por el usuario utilizando el DSL.
     instance_eval(&bloque)
+
+    # Si se indicó, mostramos por la consola las matrices utilizadas y el
+    # resultado de la operación.
+    if @out.include? TipoSalida::CONSOLA
+      @mats.each_with_index do |x, i|
+        puts "-- MATRIZ #{i+1} --"
+        puts x.to_s
+        print "\n"
+      end
+
+      puts "-- RESULTADO --"
+      puts calcular.to_s
+      print "\n"
+    end
+
+    # Enviamos las matrices y el resultado a un fichero si se indicó.
+    if @out.include? TipoSalida::FICHERO
+      File.open(@file, 'w') do |f|
+        @mats.each_with_index do |x, i|
+          f.puts "-- MATRIZ #{i+1} --"
+          f.puts x.to_s
+          f.print "\n"
+        end
+
+        f.puts "-- RESULTADO --"
+        f.puts calcular.to_s
+        f.print "\n"
+      end
+    end
   end
 
   # Indica la operación a realizar. Si se especifica varias veces, prevalece la
@@ -92,6 +122,11 @@ class MatrizDSL
           @out.push tipo_salida
           @out.uniq!
 
+          # Si el tipo es FICHERO guardamos la dirección de salida.
+          if tipo_salida == TipoSalida::FICHERO
+            @file = fichero_salida
+          end
+
         # Si el tipo es NINGUNA, se eliminan todas las salidas y se deja sólo
         # esa.
         else
@@ -117,16 +152,16 @@ class MatrizDSL
     end
   end
 
-  # Devuelve un array con las matrices utilizadas como operandos y la matriz
-  # resultado, utilizando el tipo especificado en el constructor.
+  # Devuelve un array con las matrices utilizadas como operandos utilizando el
+  # tipo especificado en el constructor.
   def to_matriz_array
-
+    @mats
   end
 
   # Devuelve la matriz resultado de la operación utilizando el tipo indicado en
   # el constructor.
   def to_m
-
+    calcular
   end
 
 protected
@@ -148,7 +183,18 @@ protected
   # especificada en el constructor. Lanzará una excepción si hay datos sin
   # introducir.
   def calcular
-
+    if (@op != TipoOperacion::NINGUNA) && (@mats.size > 1)
+      case @op
+      when TipoOperacion::SUMA
+        return @mats.reduce(:+)
+      when TipoOperacion::RESTA
+        return @mats.reduce(:-)
+      when TipoOperacion::MULTIPLICACION
+        return @mats.reduce(:*)
+      end
+    else
+      raise RuntimeError, "No se puede operar porque los datos son insuficientes"
+    end
   end
 
 end #-- class MatrizDSL
