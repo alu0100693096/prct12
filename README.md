@@ -25,7 +25,7 @@ O instálalo manualmente mediante:
 
 ## Uso
 
-## Librería
+### Librería
 
 Para utilizar esta librería en tu aplicación Ruby, debes incluir el fichero
 prct12:
@@ -54,7 +54,7 @@ class MatrizDensaEnteros < Prct12::MatrizDensa
 end
 ```
 
-## DSL
+### DSL
 
 Esta librería viene también con un DSL específico que permite definir operaciones entre matrices con más facilidad.
 Para ello, la sintaxis es la siguiente:
