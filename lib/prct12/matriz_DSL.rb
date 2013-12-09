@@ -83,11 +83,11 @@ class MatrizDSL
       return
     end
 
-    # Buscamos cuál fue el tipo que se indicó
+    # Buscamos cuál fue el tipo que se indicó.
     TipoSalida.constants.each do |x|
       if(TipoSalida.const_get(x) == tipo_salida)
 
-        # Si el tipo no es NINGUNA, lo añadimos y eliminamos duplicados
+        # Si el tipo no es NINGUNA, lo añadimos y eliminamos duplicados.
         if tipo_salida != TipoSalida::NINGUNA
           @out.push tipo_salida
           @out.uniq!
@@ -102,6 +102,8 @@ class MatrizDSL
       end
     end
 
+    # Si se ha metido un valor no permitido, lo indicamos.
+    raise ArgumentError, "Se esperaba que el argumento fuera una constante del modulo TipoSalida valida"
   end
 
   # Añade una matriz (representada como Array de Arrays) para realizar la
