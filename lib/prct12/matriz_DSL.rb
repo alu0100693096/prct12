@@ -110,7 +110,11 @@ class MatrizDSL
   # operación. Se pueden añadir tantas como se desee y el orden en el que se
   # indican importa.
   def operando(def_matriz)
-
+    if (def_matriz.is_a? Array) && (def_matriz[0].is_a? Array)
+      @mats.push def_matriz
+    else
+      raise ArgumentError, "Se esperaba un Array de Array y se recibio otra cosa."
+    end
   end
 
   # Devuelve un array con las matrices utilizadas como operandos y la matriz
