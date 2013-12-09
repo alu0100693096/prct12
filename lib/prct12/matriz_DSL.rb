@@ -5,17 +5,29 @@ module Prct12
 # Módulo que agrupa los símbolos que identifican las distintas operaciones que
 # se pueden realizar entre matrices.
 module TipoOperacion
+  # Realiza la suma entre matrices
   SUMA =            :suma
+
+  # Realiza la resta entre matrices
   RESTA =           :resta
+
+  # Realiza la multiplicación entre matrices
   MULTIPLICACION =  :multiplicacion
+
+  # No realiza ninguna operación
   NINGUNA =         :ninguna
 end
 
 # Módulo que agrupa los símbolos que identifican los distintos medios por los
 # que se reproducirá el resultado de la operación.
 module TipoSalida
+  # Muestra el resultado por pantalla
   CONSOLA = :consola
+
+  # Guarda el resultado en un fichero
   FICHERO = :fichero
+
+  # No muestra el resultado
   NINGUNA = :ninguna
 end
 
@@ -25,18 +37,18 @@ class MatrizDSL
   # El constructor. Permite definir el tipo de matriz que se va a crear y sus
   # características. Un ejemplo de instanciación de la clase MatrizDSL sería:
   #
-  # class MatrizDensaFixnum < Prct12::MatrizDensa
-  #   def zero
-  #     0
+  #   class MatrizDensaFixnum < Prct12::MatrizDensa
+  #     def zero
+  #       0
+  #     end
   #   end
-  # end
   #
-  # matriz = Prct12::MatrizDSL(MatrizDensaFixnum) do
-  #   operacion Prct12::TipoOperacion::SUMA
-  #   salida Prct12::TipoSalida::FICHERO, "salida.txt"
-  #   operando [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-  #   operando [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
-  # end
+  #   matriz = Prct12::MatrizDSL(MatrizDensaFixnum) do
+  #     operacion Prct12::TipoOperacion::SUMA
+  #     salida Prct12::TipoSalida::FICHERO, "salida.txt"
+  #     operando [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  #     operando [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+  #   end
   def initialize(tipo_matriz, &bloque)
     if !(tipo_matriz.is_a? Class)
       raise ArgumentError, "Se esperaba que el tipo del argumento fuera una clase"

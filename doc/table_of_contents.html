@@ -45,6 +45,8 @@
       <li><a href="README_md.html#label-Prct12">Prct12</a>
       <li><a href="README_md.html#label-Instalaci%C3%B3n">Instalación</a>
       <li><a href="README_md.html#label-Uso">Uso</a>
+      <li><a href="README_md.html#label-Librer%C3%ADa">Librería</a>
+      <li><a href="README_md.html#label-DSL">DSL</a>
       <li><a href="README_md.html#label-Contribuir">Contribuir</a>
     </ul>
   </li>
@@ -84,6 +86,9 @@
     <a href="Prct12/Matriz.html">Prct12::Matriz</a>
   </li>
     <li class="class">
+    <a href="Prct12/MatrizDSL.html">Prct12::MatrizDSL</a>
+  </li>
+    <li class="class">
     <a href="Prct12/MatrizDensa.html">Prct12::MatrizDensa</a>
   </li>
     <li class="class">
@@ -91,6 +96,12 @@
   </li>
     <li class="class">
     <a href="Prct12/MatrizDispersa/Posicion.html">Prct12::MatrizDispersa::Posicion</a>
+  </li>
+    <li class="module">
+    <a href="Prct12/TipoOperacion.html">Prct12::TipoOperacion</a>
+  </li>
+    <li class="module">
+    <a href="Prct12/TipoSalida.html">Prct12::TipoSalida</a>
   </li>
     <li class="class">
     <a href="Test_Matriz_Combinacion.html">Test_Matriz_Combinacion</a>
@@ -107,7 +118,11 @@
 <h2 id="methods">Methods</h2>
 <ul>
   
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-c-new">::new &mdash; Prct12::MatrizDSL</a>
+  
     <li class="method"><a href="Prct12/Fraccion.html#method-c-new">::new &mdash; Prct12::Fraccion</a>
+  
+    <li class="method"><a href="Prct12/MatrizDensa.html#method-c-new">::new &mdash; Prct12::MatrizDensa</a>
   
     <li class="method"><a href="Prct12/MatrizDispersa/Posicion.html#method-c-new">::new &mdash; Prct12::MatrizDispersa::Posicion</a>
   
@@ -115,17 +130,15 @@
   
     <li class="method"><a href="Prct12/Matriz.html#method-c-new">::new &mdash; Prct12::Matriz</a>
   
-    <li class="method"><a href="Prct12/MatrizDensa.html#method-c-new">::new &mdash; Prct12::MatrizDensa</a>
-  
     <li class="method"><a href="Prct12/Fraccion.html#method-i-25">#% &mdash; Prct12::Fraccion</a>
   
     <li class="method"><a href="Prct12/Fraccion.html#method-i-2A">#* &mdash; Prct12::Fraccion</a>
   
     <li class="method"><a href="Prct12/Matriz.html#method-i-2A">#* &mdash; Prct12::Matriz</a>
   
-    <li class="method"><a href="Prct12/Matriz.html#method-i-2B">#+ &mdash; Prct12::Matriz</a>
-  
     <li class="method"><a href="Prct12/Fraccion.html#method-i-2B">#+ &mdash; Prct12::Fraccion</a>
+  
+    <li class="method"><a href="Prct12/Matriz.html#method-i-2B">#+ &mdash; Prct12::Matriz</a>
   
     <li class="method"><a href="Prct12/Fraccion.html#method-i-2D">#- &mdash; Prct12::Fraccion</a>
   
@@ -149,13 +162,17 @@
   
     <li class="method"><a href="Prct12/Fraccion.html#method-i-abs">#abs &mdash; Prct12::Fraccion</a>
   
-    <li class="method"><a href="Prct12/Fraccion.html#method-i-coerce">#coerce &mdash; Prct12::Fraccion</a>
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-calcular">#calcular &mdash; Prct12::MatrizDSL</a>
   
-    <li class="method"><a href="Prct12/MatrizDispersa.html#method-i-columnas-3D">#columnas= &mdash; Prct12::MatrizDispersa</a>
+    <li class="method"><a href="Prct12/Fraccion.html#method-i-coerce">#coerce &mdash; Prct12::Fraccion</a>
   
     <li class="method"><a href="Prct12/MatrizDensa.html#method-i-columnas-3D">#columnas= &mdash; Prct12::MatrizDensa</a>
   
     <li class="method"><a href="Prct12/Matriz.html#method-i-columnas-3D">#columnas= &mdash; Prct12::Matriz</a>
+  
+    <li class="method"><a href="Prct12/MatrizDispersa.html#method-i-columnas-3D">#columnas= &mdash; Prct12::MatrizDispersa</a>
+  
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-crear_matriz">#crear_matriz &mdash; Prct12::MatrizDSL</a>
   
     <li class="method"><a href="Prct12/Matriz.html#method-i-each">#each &mdash; Prct12::Matriz</a>
   
@@ -175,13 +192,19 @@
   
     <li class="method"><a href="Prct12/Matriz.html#method-i-min">#min &mdash; Prct12::Matriz</a>
   
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-operacion">#operacion &mdash; Prct12::MatrizDSL</a>
+  
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-operando">#operando &mdash; Prct12::MatrizDSL</a>
+  
     <li class="method"><a href="Prct12/Fraccion.html#method-i-rec">#rec &mdash; Prct12::Fraccion</a>
   
-    <li class="method"><a href="Test_Matriz_Dispersa.html#method-i-setup">#setup &mdash; Test_Matriz_Dispersa</a>
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-salida">#salida &mdash; Prct12::MatrizDSL</a>
   
     <li class="method"><a href="Test_Matriz_Combinacion.html#method-i-setup">#setup &mdash; Test_Matriz_Combinacion</a>
   
     <li class="method"><a href="Test_Matriz_Densa.html#method-i-setup">#setup &mdash; Test_Matriz_Densa</a>
+  
+    <li class="method"><a href="Test_Matriz_Dispersa.html#method-i-setup">#setup &mdash; Test_Matriz_Dispersa</a>
   
     <li class="method"><a href="Test_Matriz_Densa.html#method-i-test_combinacion">#test_combinacion &mdash; Test_Matriz_Densa</a>
   
@@ -189,27 +212,31 @@
   
     <li class="method"><a href="Test_Matriz_Densa.html#method-i-test_enteros">#test_enteros &mdash; Test_Matriz_Densa</a>
   
-    <li class="method"><a href="Test_Matriz_Dispersa.html#method-i-test_enteros">#test_enteros &mdash; Test_Matriz_Dispersa</a>
-  
     <li class="method"><a href="Test_Matriz_Combinacion.html#method-i-test_enteros">#test_enteros &mdash; Test_Matriz_Combinacion</a>
   
-    <li class="method"><a href="Test_Matriz_Densa.html#method-i-test_fracciones">#test_fracciones &mdash; Test_Matriz_Densa</a>
+    <li class="method"><a href="Test_Matriz_Dispersa.html#method-i-test_enteros">#test_enteros &mdash; Test_Matriz_Dispersa</a>
   
     <li class="method"><a href="Test_Matriz_Dispersa.html#method-i-test_fracciones">#test_fracciones &mdash; Test_Matriz_Dispersa</a>
   
+    <li class="method"><a href="Test_Matriz_Densa.html#method-i-test_fracciones">#test_fracciones &mdash; Test_Matriz_Densa</a>
+  
     <li class="method"><a href="Prct12/Fraccion.html#method-i-to_f">#to_f &mdash; Prct12::Fraccion</a>
   
-    <li class="method"><a href="Prct12/Matriz.html#method-i-to_s">#to_s &mdash; Prct12::Matriz</a>
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-to_m">#to_m &mdash; Prct12::MatrizDSL</a>
+  
+    <li class="method"><a href="Prct12/MatrizDSL.html#method-i-to_matriz_array">#to_matriz_array &mdash; Prct12::MatrizDSL</a>
   
     <li class="method"><a href="Prct12/Fraccion.html#method-i-to_s">#to_s &mdash; Prct12::Fraccion</a>
   
+    <li class="method"><a href="Prct12/Matriz.html#method-i-to_s">#to_s &mdash; Prct12::Matriz</a>
+  
     <li class="method"><a href="Prct12/Matriz.html#method-i-validate_sizes">#validate_sizes &mdash; Prct12::Matriz</a>
   
-    <li class="method"><a href="MatrizDensaFraccion.html#method-i-zero">#zero &mdash; MatrizDensaFraccion</a>
+    <li class="method"><a href="MatrizDispersaFixnum.html#method-i-zero">#zero &mdash; MatrizDispersaFixnum</a>
   
     <li class="method"><a href="MatrizDispersaFraccion.html#method-i-zero">#zero &mdash; MatrizDispersaFraccion</a>
   
-    <li class="method"><a href="MatrizDispersaFixnum.html#method-i-zero">#zero &mdash; MatrizDispersaFixnum</a>
+    <li class="method"><a href="MatrizDensaFraccion.html#method-i-zero">#zero &mdash; MatrizDensaFraccion</a>
   
     <li class="method"><a href="MatrizDensaFixnum.html#method-i-zero">#zero &mdash; MatrizDensaFixnum</a>
   
