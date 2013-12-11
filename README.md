@@ -1,6 +1,7 @@
 # Prct12
 
-Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100700459/prct12.png?branch=master)](https://travis-ci.org/alu0100700459/prct12)
+- Estado actual de construcción de la gema: [![Build Status](https://travis-ci.org/alu0100700459/prct12.png?branch=master)](https://travis-ci.org/alu0100700459/prct12)
+- Estado actual de las dependencias de la gema: [![Dependency Status](https://gemnasium.com/alu0100700459/prct12.png)](https://gemnasium.com/alu0100700459/prct12)
 
 Clases que permiten gestionar matrices densas o dispersas de forma diferente
 para mejorar el uso de la memoria.
